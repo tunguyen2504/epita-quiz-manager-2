@@ -2,7 +2,6 @@ package fr.epita.quizmanager.datamodel;
 
 import java.util.List;
 
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -19,9 +18,9 @@ public class Question {
 	
 	private String title;
 	
-//	private List<MCQChoice> mcqChoices;
-//	
-//	private Answer answer;
+	private List<MCQChoice> mcqChoices;
+	
+	private Answer answer;
 
 	public Long getId() {
 		return id;
@@ -39,20 +38,20 @@ public class Question {
 		this.title = title;
 	}
 
-//	public List<MCQChoice> getMcqChoices() {
-//		return mcqChoices;
-//	}
-//
-//	public void setMcqChoices(List<MCQChoice> mcqChoices) {
-//		this.mcqChoices = mcqChoices;
-//	}
-//
-//	public Answer getAnswer() {
-//		return answer;
-//	}
-//
-//	public void setAnswer(Answer answer) {
-//		this.answer = answer;
-//	}
+	public List<MCQChoice> getMcqChoices() {
+		return mcqChoices;
+	}
+
+	public void setMcqChoices(List<MCQChoice> mcqChoices) {
+		this.mcqChoices = mcqChoices;
+	}
+
+	public Answer getAnswer() {
+		return answer;
+	}
+
+	public void setAnswer(Answer answer) {
+		this.answer = answer;
+	}
 	
 }

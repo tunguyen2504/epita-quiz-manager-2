@@ -1,15 +1,15 @@
 
-ƒsquid:CommentedOutCodeLine*"<This block of commented-out lines of code should be removed.(óÅâ‚ýÿÿÿÿ8îíó.HRMAJORZ
+tsquid:UselessImportCheck"5Remove this unused import 'javax.persistence.Column'.(ìûæH8âÒºõ.HARMINORZ
 CODE_SMELL
-ƒsquid:CommentedOutCodeLine2"<This block of commented-out lines of code should be removed.(ŽŠ÷üùÿÿÿÿ8îíó.H RMAJORZ
+ƒsquid:CommentedOutCodeLine*"<This block of commented-out lines of code should be removed.(óÅâ‚ýÿÿÿÿ8îíó.HBRMAJORZ
 CODE_SMELL
-ƒsquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(Ü“Â¶ÿÿÿÿÿ8ŒÙŒó.HRMAJORZ
+~squid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(«¾8ŒÙŒó.HCRMAJORZ
 CODE_SMELL
-~squid:CommentedOutCodeLine."<This block of commented-out lines of code should be removed.(ˆëŒµ8îíó.HRMAJORZ
+ƒsquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(Ü“Â¶ÿÿÿÿÿ8ŒÙŒó.HDRMAJORZ
 CODE_SMELL
-~squid:CommentedOutCodeLine6"<This block of commented-out lines of code should be removed.(Õóý¯8îíó.H!RMAJORZ
+ƒsquid:CommentedOutCodeLine2"<This block of commented-out lines of code should be removed.(ŽŠ÷üùÿÿÿÿ8îíó.HERMAJORZ
 CODE_SMELL
-~squid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(«¾8ŒÙŒó.HRMAJORZ
+~squid:CommentedOutCodeLine6"<This block of commented-out lines of code should be removed.(Õóý¯8îíó.HFRMAJORZ
 CODE_SMELL
-tsquid:UselessImportCheck"5Remove this unused import 'javax.persistence.Column'.(ìûæH8âÒºõ.H5RMINORZ
+~squid:CommentedOutCodeLine."<This block of commented-out lines of code should be removed.(ˆëŒµ8îíó.HGRMAJORZ
 CODE_SMELL
