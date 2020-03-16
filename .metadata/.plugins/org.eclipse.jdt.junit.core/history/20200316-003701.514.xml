@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="TestQuestionDAO" project="quiz-manager" tests="4" started="4" failures="0" errors="0" ignored="0">
+  <testsuite name="fr.epita.quizmanager.tests.TestQuestionDAO" time="0.308">
+    <testcase name="testGetById" classname="fr.epita.quizmanager.tests.TestQuestionDAO" time="0.101"/>
+    <testcase name="testCreate" classname="fr.epita.quizmanager.tests.TestQuestionDAO" time="0.041"/>
+    <testcase name="testDelete" classname="fr.epita.quizmanager.tests.TestQuestionDAO" time="0.157"/>
+    <testcase name="testUpdate" classname="fr.epita.quizmanager.tests.TestQuestionDAO" time="0.009"/>
+  </testsuite>
+</testrun>

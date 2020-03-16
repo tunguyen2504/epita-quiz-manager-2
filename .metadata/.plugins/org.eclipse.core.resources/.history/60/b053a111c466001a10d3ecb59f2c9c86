@@ -1,0 +1,5 @@
+package fr.epita.quizmanager.services;
+
+public class QuestionDAO {
+
+}
