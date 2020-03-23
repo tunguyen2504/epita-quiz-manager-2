@@ -1,5 +1,6 @@
 package fr.epita.quizmanager.datamodel;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -12,9 +13,11 @@ public class Answer {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
+	@Column(name = "A_ID")
 	private Long id;
-	
-	private String answer;
+
+	@Column(name = "A_CONTENT")
+	private String content;
 
 	public Long getId() {
 		return id;
@@ -24,12 +27,12 @@ public class Answer {
 		this.id = id;
 	}
 
-	public String getAnswer() {
-		return answer;
+	public String getContent() {
+		return content;
 	}
 
-	public void setAnswer(String answer) {
-		this.answer = answer;
+	public void setContent(String content) {
+		this.content = content;
 	}
 	
 }

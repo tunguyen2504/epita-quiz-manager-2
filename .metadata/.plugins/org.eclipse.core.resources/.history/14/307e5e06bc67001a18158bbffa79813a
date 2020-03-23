@@ -1,0 +1,24 @@
+package fr.epita.quizmanager.services;
+
+import java.util.List;
+
+import org.hibernate.Session;
+import org.hibernate.query.Query;
+
+import fr.epita.quizmanager.datamodel.Answer;
+import fr.epita.quizmanager.datamodel.Question;
+
+public class AnswerDAO extends GenericDAO<Answer, Long>{
+	
+	public List<Answer> search(Answer question){
+		
+		return null;
+	}
+	
+	public Answer getById(Long id) {
+		Session openSession = sf.openSession();
+//		return openSession.byId(Question.class).getReference(id);
+		return openSession.get(Answer.class, id);
+	}
+	
+}

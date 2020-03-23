@@ -1,288 +1,62 @@
-2020-03-16 00:34:43,611 INFO o.s.t.c.s.DefaultTestContextBootstrapper [main] Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener, org.springframework.test.context.event.EventPublishingTestExecutionListener]
-2020-03-16 00:34:43,639 INFO o.s.t.c.s.DefaultTestContextBootstrapper [main] Using TestExecutionListeners: [org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@3668d4, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@1c3b9394, org.springframework.test.context.support.DirtiesContextTestExecutionListener@6f2cfcc2, org.springframework.test.context.transaction.TransactionalTestExecutionListener@7f6f61c8, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@4c2cc639, org.springframework.test.context.event.EventPublishingTestExecutionListener@ccb4b1b]
-2020-03-16 00:34:44,214 INFO o.h.Version [main] HHH000412: Hibernate ORM core version 5.4.12.Final
-2020-03-16 00:34:44,377 INFO o.h.a.c.Version [main] HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
-2020-03-16 00:34:44,812 INFO o.h.d.Dialect [main] HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
-2020-03-16 00:34:45,736 INFO o.h.e.t.j.p.i.JtaPlatformInitiator [main] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2020-03-16 00:35:30,431 INFO o.s.t.c.s.DefaultTestContextBootstrapper [main] Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener, org.springframework.test.context.event.EventPublishingTestExecutionListener]
-2020-03-16 00:35:30,450 INFO o.s.t.c.s.DefaultTestContextBootstrapper [main] Using TestExecutionListeners: [org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@293a5f75, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@fcb4004, org.springframework.test.context.support.DirtiesContextTestExecutionListener@1dd6d4b7, org.springframework.test.context.transaction.TransactionalTestExecutionListener@56e8b606, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@2dd29a59, org.springframework.test.context.event.EventPublishingTestExecutionListener@784c3487]
-2020-03-16 00:35:31,012 INFO o.h.Version [main] HHH000412: Hibernate ORM core version 5.4.12.Final
-2020-03-16 00:35:31,166 INFO o.h.a.c.Version [main] HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
-2020-03-16 00:35:31,533 INFO o.h.d.Dialect [main] HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
-2020-03-16 00:35:32,577 INFO o.h.e.t.j.p.i.JtaPlatformInitiator [main] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2020-03-16 00:36:59,290 INFO o.s.t.c.s.DefaultTestContextBootstrapper [main] Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener, org.springframework.test.context.event.EventPublishingTestExecutionListener]
-2020-03-16 00:36:59,310 INFO o.s.t.c.s.DefaultTestContextBootstrapper [main] Using TestExecutionListeners: [org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@293a5f75, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@fcb4004, org.springframework.test.context.support.DirtiesContextTestExecutionListener@1dd6d4b7, org.springframework.test.context.transaction.TransactionalTestExecutionListener@56e8b606, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@2dd29a59, org.springframework.test.context.event.EventPublishingTestExecutionListener@784c3487]
-2020-03-16 00:36:59,841 INFO o.h.Version [main] HHH000412: Hibernate ORM core version 5.4.12.Final
-2020-03-16 00:37:00,000 INFO o.h.a.c.Version [main] HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
-2020-03-16 00:37:00,416 INFO o.h.d.Dialect [main] HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
-2020-03-16 00:37:01,459 INFO o.h.e.t.j.p.i.JtaPlatformInitiator [main] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2020-03-16 00:37:41,303 INFO o.s.t.c.s.DefaultTestContextBootstrapper [main] Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener, org.springframework.test.context.event.EventPublishingTestExecutionListener]
-2020-03-16 00:37:41,322 INFO o.s.t.c.s.DefaultTestContextBootstrapper [main] Using TestExecutionListeners: [org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@293a5f75, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@fcb4004, org.springframework.test.context.support.DirtiesContextTestExecutionListener@1dd6d4b7, org.springframework.test.context.transaction.TransactionalTestExecutionListener@56e8b606, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@2dd29a59, org.springframework.test.context.event.EventPublishingTestExecutionListener@784c3487]
-2020-03-16 00:37:41,815 INFO o.h.Version [main] HHH000412: Hibernate ORM core version 5.4.12.Final
-2020-03-16 00:37:41,978 INFO o.h.a.c.Version [main] HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
-2020-03-16 00:37:42,428 INFO o.h.d.Dialect [main] HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
-2020-03-16 00:37:43,359 INFO o.h.e.t.j.p.i.JtaPlatformInitiator [main] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2020-03-16 00:38:01,899 INFO o.s.t.c.s.DefaultTestContextBootstrapper [main] Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener, org.springframework.test.context.event.EventPublishingTestExecutionListener]
-2020-03-16 00:38:01,917 INFO o.s.t.c.s.DefaultTestContextBootstrapper [main] Using TestExecutionListeners: [org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@293a5f75, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@fcb4004, org.springframework.test.context.support.DirtiesContextTestExecutionListener@1dd6d4b7, org.springframework.test.context.transaction.TransactionalTestExecutionListener@56e8b606, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@2dd29a59, org.springframework.test.context.event.EventPublishingTestExecutionListener@784c3487]
-2020-03-16 00:38:02,438 INFO o.h.Version [main] HHH000412: Hibernate ORM core version 5.4.12.Final
-2020-03-16 00:38:02,591 INFO o.h.a.c.Version [main] HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
-2020-03-16 00:38:02,947 INFO o.h.d.Dialect [main] HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
-2020-03-16 00:38:03,884 INFO o.h.e.t.j.p.i.JtaPlatformInitiator [main] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2020-03-16 00:38:26,468 INFO o.s.t.c.s.DefaultTestContextBootstrapper [main] Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener, org.springframework.test.context.event.EventPublishingTestExecutionListener]
-2020-03-16 00:38:26,485 INFO o.s.t.c.s.DefaultTestContextBootstrapper [main] Using TestExecutionListeners: [org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@293a5f75, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@fcb4004, org.springframework.test.context.support.DirtiesContextTestExecutionListener@1dd6d4b7, org.springframework.test.context.transaction.TransactionalTestExecutionListener@56e8b606, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@2dd29a59, org.springframework.test.context.event.EventPublishingTestExecutionListener@784c3487]
-2020-03-16 00:38:26,983 INFO o.h.Version [main] HHH000412: Hibernate ORM core version 5.4.12.Final
-2020-03-16 00:38:27,142 INFO o.h.a.c.Version [main] HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
-2020-03-16 00:38:27,570 INFO o.h.d.Dialect [main] HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
-2020-03-16 00:38:28,525 INFO o.h.e.t.j.p.i.JtaPlatformInitiator [main] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2020-03-16 00:38:49,805 INFO o.s.t.c.s.DefaultTestContextBootstrapper [main] Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener, org.springframework.test.context.event.EventPublishingTestExecutionListener]
-2020-03-16 00:38:49,826 INFO o.s.t.c.s.DefaultTestContextBootstrapper [main] Using TestExecutionListeners: [org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@60957c0f, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@293a5f75, org.springframework.test.context.support.DirtiesContextTestExecutionListener@fcb4004, org.springframework.test.context.transaction.TransactionalTestExecutionListener@1dd6d4b7, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@56e8b606, org.springframework.test.context.event.EventPublishingTestExecutionListener@2dd29a59]
-2020-03-16 00:38:50,336 INFO o.h.Version [main] HHH000412: Hibernate ORM core version 5.4.12.Final
-2020-03-16 00:38:50,513 INFO o.h.a.c.Version [main] HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
-2020-03-16 00:38:50,996 INFO o.h.d.Dialect [main] HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
-2020-03-16 00:38:51,928 INFO o.h.e.t.j.p.i.JtaPlatformInitiator [main] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2020-03-16 00:39:35,768 INFO o.s.t.c.s.DefaultTestContextBootstrapper [main] Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener, org.springframework.test.context.event.EventPublishingTestExecutionListener]
-2020-03-16 00:39:35,786 INFO o.s.t.c.s.DefaultTestContextBootstrapper [main] Using TestExecutionListeners: [org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@293a5f75, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@fcb4004, org.springframework.test.context.support.DirtiesContextTestExecutionListener@1dd6d4b7, org.springframework.test.context.transaction.TransactionalTestExecutionListener@56e8b606, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@2dd29a59, org.springframework.test.context.event.EventPublishingTestExecutionListener@784c3487]
-2020-03-16 00:39:36,334 INFO o.h.Version [main] HHH000412: Hibernate ORM core version 5.4.12.Final
-2020-03-16 00:39:36,494 INFO o.h.a.c.Version [main] HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
-2020-03-16 00:39:36,973 INFO o.h.d.Dialect [main] HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
-2020-03-16 00:39:37,919 INFO o.h.e.t.j.p.i.JtaPlatformInitiator [main] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2020-03-16 00:39:58,110 INFO o.s.t.c.s.DefaultTestContextBootstrapper [main] Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener, org.springframework.test.context.event.EventPublishingTestExecutionListener]
-2020-03-16 00:39:58,132 INFO o.s.t.c.s.DefaultTestContextBootstrapper [main] Using TestExecutionListeners: [org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@293a5f75, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@fcb4004, org.springframework.test.context.support.DirtiesContextTestExecutionListener@1dd6d4b7, org.springframework.test.context.transaction.TransactionalTestExecutionListener@56e8b606, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@2dd29a59, org.springframework.test.context.event.EventPublishingTestExecutionListener@784c3487]
-2020-03-16 00:39:58,675 INFO o.h.Version [main] HHH000412: Hibernate ORM core version 5.4.12.Final
-2020-03-16 00:39:58,838 INFO o.h.a.c.Version [main] HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
-2020-03-16 00:39:59,333 INFO o.h.d.Dialect [main] HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
-2020-03-16 00:40:00,342 INFO o.h.e.t.j.p.i.JtaPlatformInitiator [main] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2020-03-16 00:40:00,681 ERROR o.h.h.i.a.ErrorTracker [main] line 1:68: unexpected token: title
-2020-03-16 00:40:00,681 ERROR o.h.h.i.a.ErrorTracker [main] line 1:68: unexpected token: title
-antlr.NoViableAltException: unexpected token: title
-	at org.hibernate.hql.internal.antlr.HqlBaseParser.queryRule(HqlBaseParser.java:787) [hibernate-core-5.4.12.Final.jar:5.4.12.Final]
-	at org.hibernate.hql.internal.antlr.HqlBaseParser.selectStatement(HqlBaseParser.java:319) [hibernate-core-5.4.12.Final.jar:5.4.12.Final]
-	at org.hibernate.hql.internal.antlr.HqlBaseParser.statement(HqlBaseParser.java:198) [hibernate-core-5.4.12.Final.jar:5.4.12.Final]
-	at org.hibernate.hql.internal.ast.QueryTranslatorImpl.parse(QueryTranslatorImpl.java:290) [hibernate-core-5.4.12.Final.jar:5.4.12.Final]
-	at org.hibernate.hql.internal.ast.QueryTranslatorImpl.doCompile(QueryTranslatorImpl.java:189) [hibernate-core-5.4.12.Final.jar:5.4.12.Final]
-	at org.hibernate.hql.internal.ast.QueryTranslatorImpl.compile(QueryTranslatorImpl.java:144) [hibernate-core-5.4.12.Final.jar:5.4.12.Final]
-	at org.hibernate.engine.query.spi.HQLQueryPlan.<init>(HQLQueryPlan.java:113) [hibernate-core-5.4.12.Final.jar:5.4.12.Final]
-	at org.hibernate.engine.query.spi.HQLQueryPlan.<init>(HQLQueryPlan.java:73) [hibernate-core-5.4.12.Final.jar:5.4.12.Final]
-	at org.hibernate.engine.query.spi.QueryPlanCache.getHQLQueryPlan(QueryPlanCache.java:155) [hibernate-core-5.4.12.Final.jar:5.4.12.Final]
-	at org.hibernate.internal.AbstractSharedSessionContract.getQueryPlan(AbstractSharedSessionContract.java:604) [hibernate-core-5.4.12.Final.jar:5.4.12.Final]
-	at org.hibernate.internal.AbstractSharedSessionContract.createQuery(AbstractSharedSessionContract.java:716) [hibernate-core-5.4.12.Final.jar:5.4.12.Final]
-	at org.hibernate.internal.AbstractSharedSessionContract.createQuery(AbstractSharedSessionContract.java:113) [hibernate-core-5.4.12.Final.jar:5.4.12.Final]
-	at fr.epita.quizmanager.services.QuestionDAO.search(QuestionDAO.java:39) [classes/:?]
-	at fr.epita.quizmanager.tests.TestQuestionDAO.testDelete(TestQuestionDAO.java:51) [test-classes/:?]
-	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
-	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:?]
-	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
-	at java.lang.reflect.Method.invoke(Method.java:566) ~[?:?]
-	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50) [junit-4.12.jar:4.12]
-	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12) [junit-4.12.jar:4.12]
-	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47) [junit-4.12.jar:4.12]
-	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17) [junit-4.12.jar:4.12]
-	at org.springframework.test.context.junit4.statements.RunBeforeTestExecutionCallbacks.evaluate(RunBeforeTestExecutionCallbacks.java:74) [spring-test-5.2.4.RELEASE.jar:5.2.4.RELEASE]
-	at org.springframework.test.context.junit4.statements.RunAfterTestExecutionCallbacks.evaluate(RunAfterTestExecutionCallbacks.java:84) [spring-test-5.2.4.RELEASE.jar:5.2.4.RELEASE]
-	at org.springframework.test.context.junit4.statements.RunBeforeTestMethodCallbacks.evaluate(RunBeforeTestMethodCallbacks.java:75) [spring-test-5.2.4.RELEASE.jar:5.2.4.RELEASE]
-	at org.springframework.test.context.junit4.statements.RunAfterTestMethodCallbacks.evaluate(RunAfterTestMethodCallbacks.java:86) [spring-test-5.2.4.RELEASE.jar:5.2.4.RELEASE]
-	at org.springframework.test.context.junit4.statements.SpringRepeat.evaluate(SpringRepeat.java:84) [spring-test-5.2.4.RELEASE.jar:5.2.4.RELEASE]
-	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325) [junit-4.12.jar:4.12]
-	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:251) [spring-test-5.2.4.RELEASE.jar:5.2.4.RELEASE]
-	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:97) [spring-test-5.2.4.RELEASE.jar:5.2.4.RELEASE]
-	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290) [junit-4.12.jar:4.12]
-	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71) [junit-4.12.jar:4.12]
-	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288) [junit-4.12.jar:4.12]
-	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58) [junit-4.12.jar:4.12]
-	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268) [junit-4.12.jar:4.12]
-	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:61) [spring-test-5.2.4.RELEASE.jar:5.2.4.RELEASE]
-	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:70) [spring-test-5.2.4.RELEASE.jar:5.2.4.RELEASE]
-	at org.junit.runners.ParentRunner.run(ParentRunner.java:363) [junit-4.12.jar:4.12]
-	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:190) [spring-test-5.2.4.RELEASE.jar:5.2.4.RELEASE]
-	at org.eclipse.jdt.internal.junit4.runner.JUnit4TestReference.run(JUnit4TestReference.java:89) [.cp/:?]
-	at org.eclipse.jdt.internal.junit.runner.TestExecution.run(TestExecution.java:41) [.cp/:?]
-	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:541) [.cp/:?]
-	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:763) [.cp/:?]
-	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.run(RemoteTestRunner.java:463) [.cp/:?]
-	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.main(RemoteTestRunner.java:209) [.cp/:?]
-2020-03-16 00:40:45,513 INFO o.s.t.c.s.DefaultTestContextBootstrapper [main] Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener, org.springframework.test.context.event.EventPublishingTestExecutionListener]
-2020-03-16 00:40:45,531 INFO o.s.t.c.s.DefaultTestContextBootstrapper [main] Using TestExecutionListeners: [org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@293a5f75, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@fcb4004, org.springframework.test.context.support.DirtiesContextTestExecutionListener@1dd6d4b7, org.springframework.test.context.transaction.TransactionalTestExecutionListener@56e8b606, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@2dd29a59, org.springframework.test.context.event.EventPublishingTestExecutionListener@784c3487]
-2020-03-16 00:40:46,098 INFO o.h.Version [main] HHH000412: Hibernate ORM core version 5.4.12.Final
-2020-03-16 00:40:46,311 INFO o.h.a.c.Version [main] HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
-2020-03-16 00:40:46,726 INFO o.h.d.Dialect [main] HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
-2020-03-16 00:40:47,610 INFO o.h.e.t.j.p.i.JtaPlatformInitiator [main] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2020-03-16 00:40:48,030 ERROR o.h.h.i.a.ErrorTracker [main] line 1:68: unexpected token: title
-2020-03-16 00:40:48,031 ERROR o.h.h.i.a.ErrorTracker [main] line 1:68: unexpected token: title
-antlr.NoViableAltException: unexpected token: title
-	at org.hibernate.hql.internal.antlr.HqlBaseParser.queryRule(HqlBaseParser.java:787) [hibernate-core-5.4.12.Final.jar:5.4.12.Final]
-	at org.hibernate.hql.internal.antlr.HqlBaseParser.selectStatement(HqlBaseParser.java:319) [hibernate-core-5.4.12.Final.jar:5.4.12.Final]
-	at org.hibernate.hql.internal.antlr.HqlBaseParser.statement(HqlBaseParser.java:198) [hibernate-core-5.4.12.Final.jar:5.4.12.Final]
-	at org.hibernate.hql.internal.ast.QueryTranslatorImpl.parse(QueryTranslatorImpl.java:290) [hibernate-core-5.4.12.Final.jar:5.4.12.Final]
-	at org.hibernate.hql.internal.ast.QueryTranslatorImpl.doCompile(QueryTranslatorImpl.java:189) [hibernate-core-5.4.12.Final.jar:5.4.12.Final]
-	at org.hibernate.hql.internal.ast.QueryTranslatorImpl.compile(QueryTranslatorImpl.java:144) [hibernate-core-5.4.12.Final.jar:5.4.12.Final]
-	at org.hibernate.engine.query.spi.HQLQueryPlan.<init>(HQLQueryPlan.java:113) [hibernate-core-5.4.12.Final.jar:5.4.12.Final]
-	at org.hibernate.engine.query.spi.HQLQueryPlan.<init>(HQLQueryPlan.java:73) [hibernate-core-5.4.12.Final.jar:5.4.12.Final]
-	at org.hibernate.engine.query.spi.QueryPlanCache.getHQLQueryPlan(QueryPlanCache.java:155) [hibernate-core-5.4.12.Final.jar:5.4.12.Final]
-	at org.hibernate.internal.AbstractSharedSessionContract.getQueryPlan(AbstractSharedSessionContract.java:604) [hibernate-core-5.4.12.Final.jar:5.4.12.Final]
-	at org.hibernate.internal.AbstractSharedSessionContract.createQuery(AbstractSharedSessionContract.java:716) [hibernate-core-5.4.12.Final.jar:5.4.12.Final]
-	at org.hibernate.internal.AbstractSharedSessionContract.createQuery(AbstractSharedSessionContract.java:113) [hibernate-core-5.4.12.Final.jar:5.4.12.Final]
-	at fr.epita.quizmanager.services.QuestionDAO.search(QuestionDAO.java:39) [classes/:?]
-	at fr.epita.quizmanager.tests.TestQuestionDAO.testDelete(TestQuestionDAO.java:51) [test-classes/:?]
-	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
-	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:?]
-	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
-	at java.lang.reflect.Method.invoke(Method.java:566) ~[?:?]
-	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50) [junit-4.12.jar:4.12]
-	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12) [junit-4.12.jar:4.12]
-	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47) [junit-4.12.jar:4.12]
-	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17) [junit-4.12.jar:4.12]
-	at org.springframework.test.context.junit4.statements.RunBeforeTestExecutionCallbacks.evaluate(RunBeforeTestExecutionCallbacks.java:74) [spring-test-5.2.4.RELEASE.jar:5.2.4.RELEASE]
-	at org.springframework.test.context.junit4.statements.RunAfterTestExecutionCallbacks.evaluate(RunAfterTestExecutionCallbacks.java:84) [spring-test-5.2.4.RELEASE.jar:5.2.4.RELEASE]
-	at org.springframework.test.context.junit4.statements.RunBeforeTestMethodCallbacks.evaluate(RunBeforeTestMethodCallbacks.java:75) [spring-test-5.2.4.RELEASE.jar:5.2.4.RELEASE]
-	at org.springframework.test.context.junit4.statements.RunAfterTestMethodCallbacks.evaluate(RunAfterTestMethodCallbacks.java:86) [spring-test-5.2.4.RELEASE.jar:5.2.4.RELEASE]
-	at org.springframework.test.context.junit4.statements.SpringRepeat.evaluate(SpringRepeat.java:84) [spring-test-5.2.4.RELEASE.jar:5.2.4.RELEASE]
-	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325) [junit-4.12.jar:4.12]
-	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:251) [spring-test-5.2.4.RELEASE.jar:5.2.4.RELEASE]
-	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:97) [spring-test-5.2.4.RELEASE.jar:5.2.4.RELEASE]
-	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290) [junit-4.12.jar:4.12]
-	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71) [junit-4.12.jar:4.12]
-	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288) [junit-4.12.jar:4.12]
-	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58) [junit-4.12.jar:4.12]
-	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268) [junit-4.12.jar:4.12]
-	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:61) [spring-test-5.2.4.RELEASE.jar:5.2.4.RELEASE]
-	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:70) [spring-test-5.2.4.RELEASE.jar:5.2.4.RELEASE]
-	at org.junit.runners.ParentRunner.run(ParentRunner.java:363) [junit-4.12.jar:4.12]
-	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:190) [spring-test-5.2.4.RELEASE.jar:5.2.4.RELEASE]
-	at org.eclipse.jdt.internal.junit4.runner.JUnit4TestReference.run(JUnit4TestReference.java:89) [.cp/:?]
-	at org.eclipse.jdt.internal.junit.runner.TestExecution.run(TestExecution.java:41) [.cp/:?]
-	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:541) [.cp/:?]
-	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:763) [.cp/:?]
-	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.run(RemoteTestRunner.java:463) [.cp/:?]
-	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.main(RemoteTestRunner.java:209) [.cp/:?]
-2020-03-16 00:50:02,199 INFO o.s.t.c.s.DefaultTestContextBootstrapper [main] Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener, org.springframework.test.context.event.EventPublishingTestExecutionListener]
-2020-03-16 00:50:02,216 INFO o.s.t.c.s.DefaultTestContextBootstrapper [main] Using TestExecutionListeners: [org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@293a5f75, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@fcb4004, org.springframework.test.context.support.DirtiesContextTestExecutionListener@1dd6d4b7, org.springframework.test.context.transaction.TransactionalTestExecutionListener@56e8b606, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@2dd29a59, org.springframework.test.context.event.EventPublishingTestExecutionListener@784c3487]
-2020-03-16 00:50:02,792 INFO o.h.Version [main] HHH000412: Hibernate ORM core version 5.4.12.Final
-2020-03-16 00:50:02,960 INFO o.h.a.c.Version [main] HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
-2020-03-16 00:50:03,372 INFO o.h.d.Dialect [main] HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
-2020-03-16 00:50:04,409 INFO o.h.e.t.j.p.i.JtaPlatformInitiator [main] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2020-03-16 00:51:41,960 INFO o.s.t.c.s.DefaultTestContextBootstrapper [main] Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener, org.springframework.test.context.event.EventPublishingTestExecutionListener]
-2020-03-16 00:51:41,977 INFO o.s.t.c.s.DefaultTestContextBootstrapper [main] Using TestExecutionListeners: [org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@293a5f75, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@fcb4004, org.springframework.test.context.support.DirtiesContextTestExecutionListener@1dd6d4b7, org.springframework.test.context.transaction.TransactionalTestExecutionListener@56e8b606, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@2dd29a59, org.springframework.test.context.event.EventPublishingTestExecutionListener@784c3487]
-2020-03-16 00:51:42,557 INFO o.h.Version [main] HHH000412: Hibernate ORM core version 5.4.12.Final
-2020-03-16 00:51:42,709 INFO o.h.a.c.Version [main] HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
-2020-03-16 00:51:43,083 INFO o.h.d.Dialect [main] HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
-2020-03-16 00:51:44,064 INFO o.h.e.t.j.p.i.JtaPlatformInitiator [main] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2020-03-16 00:52:00,624 INFO o.s.t.c.s.DefaultTestContextBootstrapper [main] Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener, org.springframework.test.context.event.EventPublishingTestExecutionListener]
-2020-03-16 00:52:00,640 INFO o.s.t.c.s.DefaultTestContextBootstrapper [main] Using TestExecutionListeners: [org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@293a5f75, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@fcb4004, org.springframework.test.context.support.DirtiesContextTestExecutionListener@1dd6d4b7, org.springframework.test.context.transaction.TransactionalTestExecutionListener@56e8b606, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@2dd29a59, org.springframework.test.context.event.EventPublishingTestExecutionListener@784c3487]
-2020-03-16 00:52:01,125 INFO o.h.Version [main] HHH000412: Hibernate ORM core version 5.4.12.Final
-2020-03-16 00:52:01,277 INFO o.h.a.c.Version [main] HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
-2020-03-16 00:52:01,611 INFO o.h.d.Dialect [main] HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
-2020-03-16 00:52:02,495 INFO o.h.e.t.j.p.i.JtaPlatformInitiator [main] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2020-03-16 00:52:02,764 ERROR o.h.h.i.a.ErrorTracker [main] line 1:67: unexpected token: =
-2020-03-16 00:52:02,764 ERROR o.h.h.i.a.ErrorTracker [main] line 1:67: unexpected token: =
-antlr.NoViableAltException: unexpected token: =
-	at org.hibernate.hql.internal.antlr.HqlBaseParser.unaryExpression(HqlBaseParser.java:3408) [hibernate-core-5.4.12.Final.jar:5.4.12.Final]
-	at org.hibernate.hql.internal.antlr.HqlBaseParser.multiplyExpression(HqlBaseParser.java:3273) [hibernate-core-5.4.12.Final.jar:5.4.12.Final]
-	at org.hibernate.hql.internal.antlr.HqlBaseParser.additiveExpression(HqlBaseParser.java:2930) [hibernate-core-5.4.12.Final.jar:5.4.12.Final]
-	at org.hibernate.hql.internal.antlr.HqlBaseParser.concatenation(HqlBaseParser.java:615) [hibernate-core-5.4.12.Final.jar:5.4.12.Final]
-	at org.hibernate.hql.internal.antlr.HqlBaseParser.relationalExpression(HqlBaseParser.java:2864) [hibernate-core-5.4.12.Final.jar:5.4.12.Final]
-	at org.hibernate.hql.internal.antlr.HqlBaseParser.equalityExpression(HqlBaseParser.java:2558) [hibernate-core-5.4.12.Final.jar:5.4.12.Final]
-	at org.hibernate.hql.internal.antlr.HqlBaseParser.negatedExpression(HqlBaseParser.java:2522) [hibernate-core-5.4.12.Final.jar:5.4.12.Final]
-	at org.hibernate.hql.internal.antlr.HqlBaseParser.logicalAndExpression(HqlBaseParser.java:2438) [hibernate-core-5.4.12.Final.jar:5.4.12.Final]
-	at org.hibernate.hql.internal.antlr.HqlBaseParser.logicalOrExpression(HqlBaseParser.java:2403) [hibernate-core-5.4.12.Final.jar:5.4.12.Final]
-	at org.hibernate.hql.internal.antlr.HqlBaseParser.expression(HqlBaseParser.java:2116) [hibernate-core-5.4.12.Final.jar:5.4.12.Final]
-	at org.hibernate.hql.internal.antlr.HqlBaseParser.logicalExpression(HqlBaseParser.java:1894) [hibernate-core-5.4.12.Final.jar:5.4.12.Final]
-	at org.hibernate.hql.internal.antlr.HqlBaseParser.whereClause(HqlBaseParser.java:498) [hibernate-core-5.4.12.Final.jar:5.4.12.Final]
-	at org.hibernate.hql.internal.antlr.HqlBaseParser.queryRule(HqlBaseParser.java:754) [hibernate-core-5.4.12.Final.jar:5.4.12.Final]
-	at org.hibernate.hql.internal.antlr.HqlBaseParser.selectStatement(HqlBaseParser.java:319) [hibernate-core-5.4.12.Final.jar:5.4.12.Final]
-	at org.hibernate.hql.internal.antlr.HqlBaseParser.statement(HqlBaseParser.java:198) [hibernate-core-5.4.12.Final.jar:5.4.12.Final]
-	at org.hibernate.hql.internal.ast.QueryTranslatorImpl.parse(QueryTranslatorImpl.java:290) [hibernate-core-5.4.12.Final.jar:5.4.12.Final]
-	at org.hibernate.hql.internal.ast.QueryTranslatorImpl.doCompile(QueryTranslatorImpl.java:189) [hibernate-core-5.4.12.Final.jar:5.4.12.Final]
-	at org.hibernate.hql.internal.ast.QueryTranslatorImpl.compile(QueryTranslatorImpl.java:144) [hibernate-core-5.4.12.Final.jar:5.4.12.Final]
-	at org.hibernate.engine.query.spi.HQLQueryPlan.<init>(HQLQueryPlan.java:113) [hibernate-core-5.4.12.Final.jar:5.4.12.Final]
-	at org.hibernate.engine.query.spi.HQLQueryPlan.<init>(HQLQueryPlan.java:73) [hibernate-core-5.4.12.Final.jar:5.4.12.Final]
-	at org.hibernate.engine.query.spi.QueryPlanCache.getHQLQueryPlan(QueryPlanCache.java:155) [hibernate-core-5.4.12.Final.jar:5.4.12.Final]
-	at org.hibernate.internal.AbstractSharedSessionContract.getQueryPlan(AbstractSharedSessionContract.java:604) [hibernate-core-5.4.12.Final.jar:5.4.12.Final]
-	at org.hibernate.internal.AbstractSharedSessionContract.createQuery(AbstractSharedSessionContract.java:716) [hibernate-core-5.4.12.Final.jar:5.4.12.Final]
-	at org.hibernate.internal.AbstractSharedSessionContract.createQuery(AbstractSharedSessionContract.java:113) [hibernate-core-5.4.12.Final.jar:5.4.12.Final]
-	at fr.epita.quizmanager.services.QuestionDAO.search(QuestionDAO.java:39) [classes/:?]
-	at fr.epita.quizmanager.tests.TestQuestionDAO.testDelete(TestQuestionDAO.java:51) [test-classes/:?]
-	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
-	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:?]
-	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
-	at java.lang.reflect.Method.invoke(Method.java:566) ~[?:?]
-	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50) [junit-4.12.jar:4.12]
-	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12) [junit-4.12.jar:4.12]
-	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47) [junit-4.12.jar:4.12]
-	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17) [junit-4.12.jar:4.12]
-	at org.springframework.test.context.junit4.statements.RunBeforeTestExecutionCallbacks.evaluate(RunBeforeTestExecutionCallbacks.java:74) [spring-test-5.2.4.RELEASE.jar:5.2.4.RELEASE]
-	at org.springframework.test.context.junit4.statements.RunAfterTestExecutionCallbacks.evaluate(RunAfterTestExecutionCallbacks.java:84) [spring-test-5.2.4.RELEASE.jar:5.2.4.RELEASE]
-	at org.springframework.test.context.junit4.statements.RunBeforeTestMethodCallbacks.evaluate(RunBeforeTestMethodCallbacks.java:75) [spring-test-5.2.4.RELEASE.jar:5.2.4.RELEASE]
-	at org.springframework.test.context.junit4.statements.RunAfterTestMethodCallbacks.evaluate(RunAfterTestMethodCallbacks.java:86) [spring-test-5.2.4.RELEASE.jar:5.2.4.RELEASE]
-	at org.springframework.test.context.junit4.statements.SpringRepeat.evaluate(SpringRepeat.java:84) [spring-test-5.2.4.RELEASE.jar:5.2.4.RELEASE]
-	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325) [junit-4.12.jar:4.12]
-	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:251) [spring-test-5.2.4.RELEASE.jar:5.2.4.RELEASE]
-	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:97) [spring-test-5.2.4.RELEASE.jar:5.2.4.RELEASE]
-	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290) [junit-4.12.jar:4.12]
-	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71) [junit-4.12.jar:4.12]
-	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288) [junit-4.12.jar:4.12]
-	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58) [junit-4.12.jar:4.12]
-	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268) [junit-4.12.jar:4.12]
-	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:61) [spring-test-5.2.4.RELEASE.jar:5.2.4.RELEASE]
-	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:70) [spring-test-5.2.4.RELEASE.jar:5.2.4.RELEASE]
-	at org.junit.runners.ParentRunner.run(ParentRunner.java:363) [junit-4.12.jar:4.12]
-	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:190) [spring-test-5.2.4.RELEASE.jar:5.2.4.RELEASE]
-	at org.eclipse.jdt.internal.junit4.runner.JUnit4TestReference.run(JUnit4TestReference.java:89) [.cp/:?]
-	at org.eclipse.jdt.internal.junit.runner.TestExecution.run(TestExecution.java:41) [.cp/:?]
-	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:541) [.cp/:?]
-	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:763) [.cp/:?]
-	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.run(RemoteTestRunner.java:463) [.cp/:?]
-	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.main(RemoteTestRunner.java:209) [.cp/:?]
-2020-03-16 00:52:02,789 ERROR o.h.h.i.a.ErrorTracker [main] line 1:70: unexpected token: title
-2020-03-16 00:52:02,790 ERROR o.h.h.i.a.ErrorTracker [main] line 1:70: unexpected token: title
-antlr.NoViableAltException: unexpected token: title
-	at org.hibernate.hql.internal.antlr.HqlBaseParser.queryRule(HqlBaseParser.java:787) [hibernate-core-5.4.12.Final.jar:5.4.12.Final]
-	at org.hibernate.hql.internal.antlr.HqlBaseParser.selectStatement(HqlBaseParser.java:319) [hibernate-core-5.4.12.Final.jar:5.4.12.Final]
-	at org.hibernate.hql.internal.antlr.HqlBaseParser.statement(HqlBaseParser.java:198) [hibernate-core-5.4.12.Final.jar:5.4.12.Final]
-	at org.hibernate.hql.internal.ast.QueryTranslatorImpl.parse(QueryTranslatorImpl.java:290) [hibernate-core-5.4.12.Final.jar:5.4.12.Final]
-	at org.hibernate.hql.internal.ast.QueryTranslatorImpl.doCompile(QueryTranslatorImpl.java:189) [hibernate-core-5.4.12.Final.jar:5.4.12.Final]
-	at org.hibernate.hql.internal.ast.QueryTranslatorImpl.compile(QueryTranslatorImpl.java:144) [hibernate-core-5.4.12.Final.jar:5.4.12.Final]
-	at org.hibernate.engine.query.spi.HQLQueryPlan.<init>(HQLQueryPlan.java:113) [hibernate-core-5.4.12.Final.jar:5.4.12.Final]
-	at org.hibernate.engine.query.spi.HQLQueryPlan.<init>(HQLQueryPlan.java:73) [hibernate-core-5.4.12.Final.jar:5.4.12.Final]
-	at org.hibernate.engine.query.spi.QueryPlanCache.getHQLQueryPlan(QueryPlanCache.java:155) [hibernate-core-5.4.12.Final.jar:5.4.12.Final]
-	at org.hibernate.internal.AbstractSharedSessionContract.getQueryPlan(AbstractSharedSessionContract.java:604) [hibernate-core-5.4.12.Final.jar:5.4.12.Final]
-	at org.hibernate.internal.AbstractSharedSessionContract.createQuery(AbstractSharedSessionContract.java:716) [hibernate-core-5.4.12.Final.jar:5.4.12.Final]
-	at org.hibernate.internal.AbstractSharedSessionContract.createQuery(AbstractSharedSessionContract.java:113) [hibernate-core-5.4.12.Final.jar:5.4.12.Final]
-	at fr.epita.quizmanager.services.QuestionDAO.search(QuestionDAO.java:39) [classes/:?]
-	at fr.epita.quizmanager.tests.TestQuestionDAO.testDelete(TestQuestionDAO.java:51) [test-classes/:?]
-	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
-	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:?]
-	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
-	at java.lang.reflect.Method.invoke(Method.java:566) ~[?:?]
-	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50) [junit-4.12.jar:4.12]
-	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12) [junit-4.12.jar:4.12]
-	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47) [junit-4.12.jar:4.12]
-	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17) [junit-4.12.jar:4.12]
-	at org.springframework.test.context.junit4.statements.RunBeforeTestExecutionCallbacks.evaluate(RunBeforeTestExecutionCallbacks.java:74) [spring-test-5.2.4.RELEASE.jar:5.2.4.RELEASE]
-	at org.springframework.test.context.junit4.statements.RunAfterTestExecutionCallbacks.evaluate(RunAfterTestExecutionCallbacks.java:84) [spring-test-5.2.4.RELEASE.jar:5.2.4.RELEASE]
-	at org.springframework.test.context.junit4.statements.RunBeforeTestMethodCallbacks.evaluate(RunBeforeTestMethodCallbacks.java:75) [spring-test-5.2.4.RELEASE.jar:5.2.4.RELEASE]
-	at org.springframework.test.context.junit4.statements.RunAfterTestMethodCallbacks.evaluate(RunAfterTestMethodCallbacks.java:86) [spring-test-5.2.4.RELEASE.jar:5.2.4.RELEASE]
-	at org.springframework.test.context.junit4.statements.SpringRepeat.evaluate(SpringRepeat.java:84) [spring-test-5.2.4.RELEASE.jar:5.2.4.RELEASE]
-	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325) [junit-4.12.jar:4.12]
-	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:251) [spring-test-5.2.4.RELEASE.jar:5.2.4.RELEASE]
-	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:97) [spring-test-5.2.4.RELEASE.jar:5.2.4.RELEASE]
-	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290) [junit-4.12.jar:4.12]
-	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71) [junit-4.12.jar:4.12]
-	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288) [junit-4.12.jar:4.12]
-	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58) [junit-4.12.jar:4.12]
-	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268) [junit-4.12.jar:4.12]
-	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:61) [spring-test-5.2.4.RELEASE.jar:5.2.4.RELEASE]
-	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:70) [spring-test-5.2.4.RELEASE.jar:5.2.4.RELEASE]
-	at org.junit.runners.ParentRunner.run(ParentRunner.java:363) [junit-4.12.jar:4.12]
-	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:190) [spring-test-5.2.4.RELEASE.jar:5.2.4.RELEASE]
-	at org.eclipse.jdt.internal.junit4.runner.JUnit4TestReference.run(JUnit4TestReference.java:89) [.cp/:?]
-	at org.eclipse.jdt.internal.junit.runner.TestExecution.run(TestExecution.java:41) [.cp/:?]
-	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:541) [.cp/:?]
-	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:763) [.cp/:?]
-	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.run(RemoteTestRunner.java:463) [.cp/:?]
-	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.main(RemoteTestRunner.java:209) [.cp/:?]
-2020-03-16 00:55:35,364 INFO o.s.t.c.s.DefaultTestContextBootstrapper [main] Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener, org.springframework.test.context.event.EventPublishingTestExecutionListener]
-2020-03-16 00:55:35,381 INFO o.s.t.c.s.DefaultTestContextBootstrapper [main] Using TestExecutionListeners: [org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@60957c0f, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@293a5f75, org.springframework.test.context.support.DirtiesContextTestExecutionListener@fcb4004, org.springframework.test.context.transaction.TransactionalTestExecutionListener@1dd6d4b7, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@56e8b606, org.springframework.test.context.event.EventPublishingTestExecutionListener@2dd29a59]
-2020-03-16 00:55:36,055 INFO o.h.Version [main] HHH000412: Hibernate ORM core version 5.4.12.Final
-2020-03-16 00:55:36,260 INFO o.h.a.c.Version [main] HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
-2020-03-16 00:55:36,763 INFO o.h.d.Dialect [main] HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
-2020-03-16 00:55:39,380 INFO o.h.e.t.j.p.i.JtaPlatformInitiator [main] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-03-23 00:27:52,887 INFO o.s.t.c.s.DefaultTestContextBootstrapper [main] Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener, org.springframework.test.context.event.EventPublishingTestExecutionListener]
+2020-03-23 00:27:52,919 INFO o.s.t.c.s.DefaultTestContextBootstrapper [main] Using TestExecutionListeners: [org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@3d9f6567, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@c055c54, org.springframework.test.context.support.DirtiesContextTestExecutionListener@25e2ab5a, org.springframework.test.context.transaction.TransactionalTestExecutionListener@35e5d0e5, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@73173f63, org.springframework.test.context.event.EventPublishingTestExecutionListener@55562aa9]
+2020-03-23 00:27:53,721 INFO o.h.j.i.u.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-03-23 00:27:53,829 INFO o.h.Version [main] HHH000412: Hibernate ORM core version 5.4.12.Final
+2020-03-23 00:27:54,020 INFO o.h.a.c.Version [main] HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-03-23 00:27:54,611 INFO o.h.d.Dialect [main] HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2020-03-23 00:27:55,791 INFO o.h.e.t.j.p.i.JtaPlatformInitiator [main] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-03-23 00:27:55,804 INFO o.s.o.j.LocalContainerEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-03-23 00:27:56,236 ERROR f.e.q.t.TestExamDataService [main] null
+2020-03-23 00:33:45,581 INFO o.s.t.c.s.DefaultTestContextBootstrapper [main] Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener, org.springframework.test.context.event.EventPublishingTestExecutionListener]
+2020-03-23 00:33:45,602 INFO o.s.t.c.s.DefaultTestContextBootstrapper [main] Using TestExecutionListeners: [org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@1dd6d4b7, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@56e8b606, org.springframework.test.context.support.DirtiesContextTestExecutionListener@2dd29a59, org.springframework.test.context.transaction.TransactionalTestExecutionListener@784c3487, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@53142455, org.springframework.test.context.event.EventPublishingTestExecutionListener@40dff0b7]
+2020-03-23 00:33:46,460 INFO o.h.j.i.u.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-03-23 00:33:46,577 INFO o.h.Version [main] HHH000412: Hibernate ORM core version 5.4.12.Final
+2020-03-23 00:33:46,763 INFO o.h.a.c.Version [main] HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-03-23 00:33:47,325 INFO o.h.d.Dialect [main] HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2020-03-23 00:33:48,582 INFO o.h.e.t.j.p.i.JtaPlatformInitiator [main] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-03-23 00:33:48,595 INFO o.s.o.j.LocalContainerEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-03-23 00:33:48,935 ERROR f.e.q.t.TestExamDataService [main] null
+2020-03-23 00:34:13,348 INFO o.s.t.c.s.DefaultTestContextBootstrapper [main] Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener, org.springframework.test.context.event.EventPublishingTestExecutionListener]
+2020-03-23 00:34:13,372 INFO o.s.t.c.s.DefaultTestContextBootstrapper [main] Using TestExecutionListeners: [org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@1dd6d4b7, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@56e8b606, org.springframework.test.context.support.DirtiesContextTestExecutionListener@2dd29a59, org.springframework.test.context.transaction.TransactionalTestExecutionListener@784c3487, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@53142455, org.springframework.test.context.event.EventPublishingTestExecutionListener@40dff0b7]
+2020-03-23 00:34:14,198 INFO o.h.j.i.u.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-03-23 00:34:14,298 INFO o.h.Version [main] HHH000412: Hibernate ORM core version 5.4.12.Final
+2020-03-23 00:34:14,485 INFO o.h.a.c.Version [main] HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-03-23 00:34:15,067 INFO o.h.d.Dialect [main] HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2020-03-23 00:34:16,250 INFO o.h.e.t.j.p.i.JtaPlatformInitiator [main] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-03-23 00:34:16,270 INFO o.s.o.j.LocalContainerEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-03-23 00:34:16,983 INFO f.e.q.t.TestQuestionDAO [main] question id 1
+2020-03-23 00:34:16,994 INFO o.s.o.j.LocalContainerEntityManagerFactoryBean [SpringContextShutdownHook] Closing JPA EntityManagerFactory for persistence unit 'default'
+2020-03-23 00:35:54,166 INFO o.s.t.c.s.DefaultTestContextBootstrapper [main] Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener, org.springframework.test.context.event.EventPublishingTestExecutionListener]
+2020-03-23 00:35:54,184 INFO o.s.t.c.s.DefaultTestContextBootstrapper [main] Using TestExecutionListeners: [org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@1dd6d4b7, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@56e8b606, org.springframework.test.context.support.DirtiesContextTestExecutionListener@2dd29a59, org.springframework.test.context.transaction.TransactionalTestExecutionListener@784c3487, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@53142455, org.springframework.test.context.event.EventPublishingTestExecutionListener@40dff0b7]
+2020-03-23 00:35:55,058 INFO o.h.j.i.u.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-03-23 00:35:55,269 INFO o.h.Version [main] HHH000412: Hibernate ORM core version 5.4.12.Final
+2020-03-23 00:35:55,498 INFO o.h.a.c.Version [main] HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-03-23 00:35:56,161 INFO o.h.d.Dialect [main] HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2020-03-23 00:35:57,421 INFO o.h.e.t.j.p.i.JtaPlatformInitiator [main] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-03-23 00:35:57,435 INFO o.s.o.j.LocalContainerEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-03-23 00:36:57,202 INFO o.s.t.c.s.DefaultTestContextBootstrapper [main] Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener, org.springframework.test.context.event.EventPublishingTestExecutionListener]
+2020-03-23 00:36:57,222 INFO o.s.t.c.s.DefaultTestContextBootstrapper [main] Using TestExecutionListeners: [org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@1dd6d4b7, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@56e8b606, org.springframework.test.context.support.DirtiesContextTestExecutionListener@2dd29a59, org.springframework.test.context.transaction.TransactionalTestExecutionListener@784c3487, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@53142455, org.springframework.test.context.event.EventPublishingTestExecutionListener@40dff0b7]
+2020-03-23 00:36:58,031 INFO o.h.j.i.u.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-03-23 00:36:58,137 INFO o.h.Version [main] HHH000412: Hibernate ORM core version 5.4.12.Final
+2020-03-23 00:36:58,360 INFO o.h.a.c.Version [main] HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-03-23 00:36:59,023 INFO o.h.d.Dialect [main] HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2020-03-23 00:37:00,231 INFO o.h.e.t.j.p.i.JtaPlatformInitiator [main] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-03-23 00:37:00,255 INFO o.s.o.j.LocalContainerEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-03-23 00:37:00,734 ERROR f.e.q.t.TestExamDataService [main] null
+2020-03-23 00:44:17,152 ERROR f.e.q.t.TestExamDataService [main] null
+2020-03-23 00:47:08,978 ERROR f.e.q.t.TestExamDataService [main] java.lang.NullPointerException
+2020-03-23 00:52:07,015 ERROR f.e.q.t.TestExamDataService [main] java.lang.NullPointerException
+2020-03-23 00:52:34,332 ERROR f.e.q.t.TestExamDataService [main] null
+2020-03-23 01:23:52,632 ERROR f.e.q.t.TestExamDataService [main] java.lang.NullPointerException
+2020-03-23 01:25:44,717 ERROR f.e.q.t.TestExamDataService [main] java.lang.NullPointerException
+2020-03-23 01:26:19,106 ERROR f.e.q.t.TestExamDataService [main] java.lang.NullPointerException
+2020-03-23 01:26:52,010 ERROR f.e.q.t.TestExamDataService [main] java.lang.NullPointerException
+2020-03-23 01:36:06,950 ERROR f.e.q.t.TestExamDataService [main] java.lang.IllegalArgumentException: id to load is required for loading
+2020-03-23 01:37:02,739 ERROR f.e.q.t.TestExamDataService [main] java.lang.IllegalArgumentException: id to load is required for loading
+2020-03-23 01:38:32,290 ERROR f.e.q.t.TestExamDataService [main] java.lang.IllegalArgumentException: id to load is required for loading
+2020-03-23 01:39:07,289 ERROR f.e.q.t.TestExamDataService [main] java.lang.IllegalArgumentException: id to load is required for loading
+2020-03-23 01:39:44,943 ERROR f.e.q.t.TestExamDataService [main] java.lang.IllegalArgumentException: id to load is required for loading
+2020-03-23 01:42:41,719 ERROR f.e.q.t.TestExamDataService [main] org.hibernate.LazyInitializationException: failed to lazily initialize a collection of role: fr.epita.quizmanager.datamodel.Question.answers, could not initialize proxy - no Session
+2020-03-23 01:43:32,144 ERROR f.e.q.t.TestExamDataService [main] java.lang.NullPointerException
+2020-03-23 01:46:16,812 ERROR f.e.q.t.TestExamDataService [main] java.lang.NullPointerException
+2020-03-23 01:49:24,822 ERROR f.e.q.t.TestExamDataService [main] java.lang.NullPointerException

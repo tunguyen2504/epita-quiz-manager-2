@@ -1,0 +1,53 @@
+package fr.epita.quizmanager.services;
+
+import java.util.Arrays;
+import java.util.List;
+
+import javax.inject.Inject;
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.query.Query;
+
+import fr.epita.quizmanager.datamodel.Question;
+
+public class QuestionDAO {
+
+	@Inject
+	SessionFactory sf;
+
+	public void create(Question question) {
+		Session openSession = sf.openSession();
+		openSession.save(question);
+		openSession.close();
+	}
+
+	public void update(Question question) {
+		Session openSession = sf.openSession();
+		openSession.update(question);
+		openSession.close();
+	}
+
+	public void delete(Question question) {
+		Session openSession = sf.openSession();
+		openSession.delete(question);
+		openSession.close();
+	}
+	
+	public List<Question> search(String title){
+		Session openSession = sf.openSession();
+		Query<Question> searchQuery = openSession.createQuery("from Question", Question.class);
+		List<Question> resultList = (List<Question>) searchQuery.list();
+		openSession.close();
+		
+		return resultList;
+	}
+	
+	public Question getById(Long id) {
+		Session openSession = sf.openSession();
+		Question question = openSession.byId(Question.class).getReference(id);
+		openSession.close();
+		
+		return question;
+	}
+	
+}

@@ -18,18 +18,18 @@ public class TestStudentDAO {
 	@Inject
 	StudentDAO dao;
 	
-	@Test
-	public void testCreate() {
-		Student student = new Student();
-		dao.create(student);
-		
-		Assert.assertNotEquals(0L, student.getId().longValue());
-	}
-	
-	@Test
-	public void testGetById() {
-		Student student = dao.getById(1L);
-		
-		Assert.assertEquals(1L, student.getId().longValue());
-	}
+//	@Test
+//	public void testCreate() {
+//		Student student = new Student();
+//		dao.create(student);
+//		
+//		Assert.assertNotEquals(0L, student.getId().longValue());
+//	}
+//	
+//	@Test
+//	public void testGetById() {
+//		Student student = dao.getById(1L);
+//		
+//		Assert.assertEquals(1L, student.getId().longValue());
+//	}
 }

@@ -2,10 +2,14 @@ package fr.epita.quizmanager.datamodel;
 
 import java.util.List;
 
+import javax.persistence.CascadeType;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinTable;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -14,13 +18,15 @@ public class Question {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
+	@Column(name = "Q_ID")
 	private Long id;
 	
+	@Column(name = "Q_TITLE")
 	private String title;
 	
-	private List<MCQChoice> mcqChoices;
-	
-	private Answer answer;
+	@OneToMany(cascade = CascadeType.ALL) // ALL: Strong aggregation, no cascade: weak aggregation
+	@JoinTable(name = "ANSWERS_QUESTIONS")
+	private List<Answer> answers;
 
 	public Long getId() {
 		return id;
@@ -38,20 +44,12 @@ public class Question {
 		this.title = title;
 	}
 
-	public List<MCQChoice> getMcqChoices() {
-		return mcqChoices;
+	public List<Answer> getAnswers() {
+		return answers;
 	}
 
-	public void setMcqChoices(List<MCQChoice> mcqChoices) {
-		this.mcqChoices = mcqChoices;
-	}
-
-	public Answer getAnswer() {
-		return answer;
-	}
-
-	public void setAnswer(Answer answer) {
-		this.answer = answer;
+	public void setAnswers(List<Answer> answers) {
+		this.answers = answers;
 	}
 	
 }

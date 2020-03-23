@@ -1,0 +1,37 @@
+package fr.epita.quizmanager.services;
+
+import javax.inject.Inject;
+
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
+
+public class GenericDAO<T> {
+
+	@Inject
+	SessionFactory sf;
+
+	public void create(T entity) {
+		Session openSession = sf.openSession();
+		Transaction tx = openSession.getTransaction();
+		tx.begin();
+		openSession.save(entity);
+		tx.commit();
+	}
+
+	public void update(T entity) {
+		Session openSession = sf.openSession();
+		Transaction tx = openSession.getTransaction();
+		tx.begin();
+		openSession.update(entity);
+		tx.commit();
+	}
+
+	public void delete(T entity) {
+		Session openSession = sf.openSession();
+		Transaction tx = openSession.getTransaction();
+		tx.begin();
+		openSession.delete(entity);
+		tx.commit();
+	}
+}

@@ -2,13 +2,22 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xmlns:context="http://www.springframework.org/schema/context"
 	xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xmlns:tx="http://www.springframework.org/schema/tx"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans
         http://www.springframework.org/schema/beans/spring-beans.xsd
         http://www.springframework.org/schema/context
         http://www.springframework.org/schema/context/spring-context.xsd
+        http://www.springframework.org/schema/tx
+        http://www.springframework.org/schema/tx/spring-tx.xsd
         http://www.springframework.org/schema/mvc
         http://www.springframework.org/schema/mvc/spring-mvc.xsd">
-	
+
+	<bean id="firstQuery" class="java.lang.String">
+		<constructor-arg>
+			<value>select * from Questions</value>
+		</constructor-arg>
+	</bean>
+
 	<bean id="mainDS"
 		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
 		<property name="url"
@@ -32,22 +41,47 @@
 		</property>
 	</bean>
 
-	<bean id="sessionFactory"
-		class="org.springframework.orm.hibernate5.LocalSessionFactoryBean">
+	<!-- <bean id="sessionFactory" class="org.springframework.orm.hibernate5.LocalSessionFactoryBean"> 
+		<property name="dataSource" ref="mainDS" /> <property name="hibernateProperties" 
+		ref="hibernateProperties" /> <property name="packagesToScan"> <list> <value>fr.epita.quiz.datamodel</value> 
+		</list> </property> </bean> -->
+
+
+	<bean id="entityManagerFactory"
+		class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
 		<property name="dataSource" ref="mainDS" />
-		<property name="hibernateProperties"
-			ref="hibernateProperties" />
-		<property name="packagesToScan">
-			<list>
-				<value>fr.epita.quizmanager.datamodel</value>
-			</list>
+		<property name="packagesToScan"
+			value="fr.epita.quizmanager.datamodel" />
+		<property name="jpaVendorAdapter">
+			<bean
+				class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter" />
 		</property>
+		<property name="jpaProperties" ref="hibernateProperties" />
+
+	</bean>
+
+
+	<bean id="transactionManager"
+		class="org.springframework.orm.jpa.JpaTransactionManager">
+		<property name="entityManagerFactory"
+			ref="entityManagerFactory" />
+	</bean>
+	<tx:annotation-driven />
+
+	<bean id="questionDAO"
+		class="fr.epita.quizmanager.services.QuestionDAO">
 	</bean>
 	
-	<bean id="questionDAO" class="fr.epita.quizmanager.services.QuestionDAO">
+	<bean id="answerDAO"
+		class="fr.epita.quizmanager.services.AnswerDAO">
+	</bean>
+
+	<bean id="studentDAO"
+		class="fr.epita.quizmanager.services.StudentDAO">
 	</bean>
 	
-	<bean id="studentDAO" class="fr.epita.quizmanager.services.StudentDAO">
+	<bean id="examDataService"
+		class="fr.epita.quizmanager.services.ExamDataService">
 	</bean>
-	
+
 </beans>
