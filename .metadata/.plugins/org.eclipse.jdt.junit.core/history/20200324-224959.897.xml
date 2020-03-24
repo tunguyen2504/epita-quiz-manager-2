@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="TestExamDataService" project="quiz-manager" tests="2" started="2" failures="0" errors="1" ignored="0">
+  <testsuite name="fr.epita.quizmanager.tests.TestExamDataService" time="0.34">
+    <testcase name="testSaveAnswerForNotFoundQuestion" classname="fr.epita.quizmanager.tests.TestExamDataService" time="0.19"/>
+    <testcase name="testSaveAnswerForExistingQuestion" classname="fr.epita.quizmanager.tests.TestExamDataService" time="0.15">
+      <error>org.springframework.dao.DataIntegrityViolationException: could not execute statement; SQL [n/a]; constraint ["PUBLIC.UK_MF7456WLHF9XHYGRN66BVIYAG_INDEX_4 ON PUBLIC.USERS(U_EMAIL) VALUES 1"; SQL statement:
+insert into USERS (U_EMAIL, U_LOGIN, U_ID) values (?, ?, ?) [23505-200]]; nested exception is org.hibernate.exception.ConstraintViolationException: could not execute statement&#13;
+	at org.springframework.orm.jpa.vendor.HibernateJpaDialect.convertHibernateAccessException(HibernateJpaDialect.java:298)&#13;
+	at org.springframework.orm.jpa.vendor.HibernateJpaDialect.translateExceptionIfPossible(HibernateJpaDialect.java:255)&#13;
+	at org.springframework.orm.jpa.JpaTransactionManager.doCommit(JpaTransactionManager.java:538)&#13;
+	at org.springframework.transaction.support.AbstractPlatformTransactionManager.processCommit(AbstractPlatformTransactionManager.java:743)&#13;
+	at org.springframework.transaction.support.AbstractPlatformTransactionManager.commit(AbstractPlatformTransactionManager.java:711)&#13;
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.commitTransactionAfterReturning(TransactionAspectSupport.java:631)&#13;
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:385)&#13;
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:99)&#13;
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)&#13;
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:747)&#13;
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:689)&#13;
+	at fr.epita.quizmanager.services.dao.UserDAO$$EnhancerBySpringCGLIB$$9df50f55.create(&lt;generated&gt;)&#13;
+	at fr.epita.quizmanager.tests.TestExamDataService.testSaveAnswerForExistingQuestion(TestExamDataService.java:52)&#13;
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)&#13;
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)&#13;
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)&#13;
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)&#13;
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)&#13;
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)&#13;
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)&#13;
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)&#13;
+	at org.springframework.test.context.junit4.statements.RunBeforeTestExecutionCallbacks.evaluate(RunBeforeTestExecutionCallbacks.java:74)&#13;
+	at org.springframework.test.context.junit4.statements.RunAfterTestExecutionCallbacks.evaluate(RunAfterTestExecutionCallbacks.java:84)&#13;
+	at org.springframework.test.context.junit4.statements.RunBeforeTestMethodCallbacks.evaluate(RunBeforeTestMethodCallbacks.java:75)&#13;
+	at org.springframework.test.context.junit4.statements.RunAfterTestMethodCallbacks.evaluate(RunAfterTestMethodCallbacks.java:86)&#13;
+	at org.springframework.test.context.junit4.statements.SpringRepeat.evaluate(SpringRepeat.java:84)&#13;
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)&#13;
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:251)&#13;
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:97)&#13;
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)&#13;
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)&#13;
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)&#13;
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)&#13;
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)&#13;
+	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:61)&#13;
+	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:70)&#13;
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)&#13;
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:190)&#13;
+	at org.eclipse.jdt.internal.junit4.runner.JUnit4TestReference.run(JUnit4TestReference.java:89)&#13;
+	at org.eclipse.jdt.internal.junit.runner.TestExecution.run(TestExecution.java:41)&#13;
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:541)&#13;
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:763)&#13;
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.run(RemoteTestRunner.java:463)&#13;
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.main(RemoteTestRunner.java:209)&#13;
+Caused by: org.hibernate.exception.ConstraintViolationException: could not execute statement&#13;
+	at org.hibernate.exception.internal.SQLExceptionTypeDelegate.convert(SQLExceptionTypeDelegate.java:59)&#13;
+	at org.hibernate.exception.internal.StandardSQLExceptionConverter.convert(StandardSQLExceptionConverter.java:42)&#13;
+	at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:113)&#13;
+	at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:99)&#13;
+	at org.hibernate.engine.jdbc.internal.ResultSetReturnImpl.executeUpdate(ResultSetReturnImpl.java:200)&#13;
+	at org.hibernate.persister.entity.AbstractEntityPersister.insert(AbstractEntityPersister.java:3235)&#13;
+	at org.hibernate.persister.entity.AbstractEntityPersister.insert(AbstractEntityPersister.java:3760)&#13;
+	at org.hibernate.action.internal.EntityInsertAction.execute(EntityInsertAction.java:107)&#13;
+	at org.hibernate.engine.spi.ActionQueue.executeActions(ActionQueue.java:604)&#13;
+	at org.hibernate.engine.spi.ActionQueue.lambda$executeActions$1(ActionQueue.java:478)&#13;
+	at java.base/java.util.LinkedHashMap.forEach(LinkedHashMap.java:684)&#13;
+	at org.hibernate.engine.spi.ActionQueue.executeActions(ActionQueue.java:475)&#13;
+	at org.hibernate.event.internal.AbstractFlushingEventListener.performExecutions(AbstractFlushingEventListener.java:348)&#13;
+	at org.hibernate.event.internal.DefaultFlushEventListener.onFlush(DefaultFlushEventListener.java:40)&#13;
+	at org.hibernate.event.service.internal.EventListenerGroupImpl.fireEventOnEachListener(EventListenerGroupImpl.java:102)&#13;
+	at org.hibernate.internal.SessionImpl.doFlush(SessionImpl.java:1352)&#13;
+	at org.hibernate.internal.SessionImpl.managedFlush(SessionImpl.java:443)&#13;
+	at org.hibernate.internal.SessionImpl.flushBeforeTransactionCompletion(SessionImpl.java:3202)&#13;
+	at org.hibernate.internal.SessionImpl.beforeTransactionCompletion(SessionImpl.java:2370)&#13;
+	at org.hibernate.engine.jdbc.internal.JdbcCoordinatorImpl.beforeTransactionCompletion(JdbcCoordinatorImpl.java:447)&#13;
+	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcResourceLocalTransactionCoordinatorImpl.beforeCompletionCallback(JdbcResourceLocalTransactionCoordinatorImpl.java:183)&#13;
+	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcResourceLocalTransactionCoordinatorImpl.access$300(JdbcResourceLocalTransactionCoordinatorImpl.java:40)&#13;
+	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcResourceLocalTransactionCoordinatorImpl$TransactionDriverControlImpl.commit(JdbcResourceLocalTransactionCoordinatorImpl.java:281)&#13;
+	at org.hibernate.engine.transaction.internal.TransactionImpl.commit(TransactionImpl.java:101)&#13;
+	at org.springframework.orm.jpa.JpaTransactionManager.doCommit(JpaTransactionManager.java:534)&#13;
+	... 41 more&#13;
+Caused by: org.h2.jdbc.JdbcSQLIntegrityConstraintViolationException: Unique index or primary key violation: "PUBLIC.UK_MF7456WLHF9XHYGRN66BVIYAG_INDEX_4 ON PUBLIC.USERS(U_EMAIL) VALUES 1"; SQL statement:
+insert into USERS (U_EMAIL, U_LOGIN, U_ID) values (?, ?, ?) [23505-200]&#13;
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:459)&#13;
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:429)&#13;
+	at org.h2.message.DbException.get(DbException.java:205)&#13;
+	at org.h2.message.DbException.get(DbException.java:181)&#13;
+	at org.h2.index.BaseIndex.getDuplicateKeyException(BaseIndex.java:103)&#13;
+	at org.h2.mvstore.db.MVSecondaryIndex.checkUnique(MVSecondaryIndex.java:221)&#13;
+	at org.h2.mvstore.db.MVSecondaryIndex.add(MVSecondaryIndex.java:196)&#13;
+	at org.h2.mvstore.db.MVTable.addRow(MVTable.java:531)&#13;
+	at org.h2.command.dml.Insert.insertRows(Insert.java:195)&#13;
+	at org.h2.command.dml.Insert.update(Insert.java:151)&#13;
+	at org.h2.command.CommandContainer.update(CommandContainer.java:198)&#13;
+	at org.h2.command.Command.executeUpdate(Command.java:251)&#13;
+	at org.h2.jdbc.JdbcPreparedStatement.executeUpdateInternal(JdbcPreparedStatement.java:191)&#13;
+	at org.h2.jdbc.JdbcPreparedStatement.executeUpdate(JdbcPreparedStatement.java:152)&#13;
+	at org.hibernate.engine.jdbc.internal.ResultSetReturnImpl.executeUpdate(ResultSetReturnImpl.java:197)&#13;
+	... 61 more&#13;
+&#13;
+</error>
+    </testcase>
+  </testsuite>
+</testrun>

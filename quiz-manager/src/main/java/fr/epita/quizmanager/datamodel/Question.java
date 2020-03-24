@@ -8,7 +8,6 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinTable;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
@@ -24,8 +23,7 @@ public class Question {
 	@Column(name = "Q_TITLE")
 	private String title;
 	
-	@OneToMany(cascade = CascadeType.ALL) // ALL: Strong aggregation, no cascade: weak aggregation
-	@JoinTable(name = "ANSWERS_QUESTIONS")
+	@OneToMany(cascade = CascadeType.ALL, mappedBy = "question") // ALL: Strong aggregation, no cascade: weak aggregation
 	private List<Answer> answers;
 
 	public Long getId() {

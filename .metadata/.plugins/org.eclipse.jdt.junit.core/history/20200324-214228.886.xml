@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="TestExamDataService" project="quiz-manager" tests="1" started="1" failures="0" errors="0" ignored="0">
+  <testsuite name="fr.epita.quizmanager.tests.TestExamDataService" time="0.283">
+    <testcase name="testSaveAnswerForExistingQuestion" classname="fr.epita.quizmanager.tests.TestExamDataService" time="0.283"/>
+  </testsuite>
+</testrun>

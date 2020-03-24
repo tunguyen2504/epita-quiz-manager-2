@@ -1,8 +1,8 @@
 package fr.epita.quizmanager.tests;
 
 import fr.epita.quizmanager.datamodel.Question;
-import fr.epita.quizmanager.services.GenericDAO;
-import fr.epita.quizmanager.services.QuestionDAO;
+import fr.epita.quizmanager.services.dao.GenericDAO;
+import fr.epita.quizmanager.services.dao.QuestionDAO;
 
 public class TestGenericDAO {
 	

@@ -69,19 +69,23 @@
 	<tx:annotation-driven />
 
 	<bean id="questionDAO"
-		class="fr.epita.quizmanager.services.QuestionDAO">
+		class="fr.epita.quizmanager.services.dao.QuestionDAO">
 	</bean>
-	
+
 	<bean id="answerDAO"
-		class="fr.epita.quizmanager.services.AnswerDAO">
+		class="fr.epita.quizmanager.services.dao.AnswerDAO">
 	</bean>
 
 	<bean id="studentDAO"
-		class="fr.epita.quizmanager.services.StudentDAO">
+		class="fr.epita.quizmanager.services.dao.StudentDAO">
 	</bean>
-	
+
+	<bean id="userDAO"
+		class="fr.epita.quizmanager.services.dao.UserDAO">
+	</bean>
+
 	<bean id="examDataService"
-		class="fr.epita.quizmanager.services.ExamDataService">
+		class="fr.epita.quizmanager.services.business.ExamDataService">
 	</bean>
 
 </beans>

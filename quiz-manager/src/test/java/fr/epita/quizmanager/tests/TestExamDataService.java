@@ -17,8 +17,10 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import fr.epita.quizmanager.datamodel.Answer;
 import fr.epita.quizmanager.datamodel.Question;
-import fr.epita.quizmanager.services.ExamDataService;
-import fr.epita.quizmanager.services.QuestionDAO;
+import fr.epita.quizmanager.datamodel.User;
+import fr.epita.quizmanager.services.business.ExamDataService;
+import fr.epita.quizmanager.services.dao.QuestionDAO;
+import fr.epita.quizmanager.services.dao.UserDAO;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations = "/applicationContext.xml")
@@ -31,6 +33,9 @@ public class TestExamDataService {
 
 	@Inject
 	QuestionDAO questionDAO;
+	
+	@Inject
+	UserDAO userDAO;
 
 	@Inject
 	DataSource ds;
@@ -41,17 +46,21 @@ public class TestExamDataService {
 		Question question = new Question();
 		question.setTitle("What is JPA?");
 		questionDAO.create(question);
+		User user = new User();
+		user.setLoginName("anhtu.nguyen");
+		user.setEmail("anh-tu.nguyen@epita.fr");
+		userDAO.create(user);
 		Answer answer = new Answer();
 		answer.setContent("JPA is Java Persistence API");
 		// when
 		try {
-			examDS.saveAnswer(question, answer);
+			examDS.saveAnswerToQuestion(user, question, answer);
 		} catch (Exception e) {
 			LOGGER.error(e);
 		}
 		// then
 		try (Connection connection = ds.getConnection();
-				PreparedStatement stmt = connection.prepareStatement("SELECT COUNT(1) FROM ANSWERS_QUESTIONS");
+				PreparedStatement stmt = connection.prepareStatement("SELECT COUNT(1) FROM ANSWERS WHERE A_QUESTION_FK = " + question.getId() + " AND A_USER_FK = " + user.getId());
 				ResultSet rs = stmt.executeQuery();) {
 			rs.next();
 			int count = rs.getInt(1);
@@ -65,11 +74,33 @@ public class TestExamDataService {
 	public void testSaveAnswerForNotFoundQuestion() {
 		// given
 		Question question = new Question();
+		User user = new User();
+		user.setLoginName("tu.nguyen");
+		user.setEmail("tu.nguyen@epita.fr");
+		userDAO.create(user);
 		Answer answer = new Answer();
 		answer.setContent("Java is a subject at EPITA.");
 		// when
 		try {
-			examDS.saveAnswer(question, answer);
+			examDS.saveAnswerToQuestion(user, question, answer);
+		} catch (Exception e) { // then
+			System.out.println("We got this exception: " + e.getMessage());
+			Assert.assertTrue(e instanceof NullPointerException);
+		}
+	}
+	
+	@Test
+	public void testSaveAnswerByNotFoundUser() {
+		// given
+		Question question = new Question();
+		question.setTitle("What is JPA?");
+		questionDAO.create(question);
+		User user = new User();
+		Answer answer = new Answer();
+		answer.setContent("Java is a subject at EPITA.");
+		// when
+		try {
+			examDS.saveAnswerToQuestion(user, question, answer);
 		} catch (Exception e) { // then
 			System.out.println("We got this exception: " + e.getMessage());
 			Assert.assertTrue(e instanceof NullPointerException);

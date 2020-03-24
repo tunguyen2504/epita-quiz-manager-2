@@ -1,0 +1,28 @@
+package fr.epita.quizmanager.services;
+
+import java.util.Map;
+
+import fr.epita.quizmanager.datamodel.User;
+
+public class UserDAO extends GenericDAO<User, Long> {
+
+	@Override
+	public String getQuery() {
+		return "from User where email = :pEmail";
+	}
+
+	@Override
+	public void setParameters(Map<String, Object> parameters, User criteria) {
+		parameters.put("pEmail", criteria.getEmail());
+		
+	}
+
+	@Override
+	public Class<User> getEntityClass() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	
+	
+}

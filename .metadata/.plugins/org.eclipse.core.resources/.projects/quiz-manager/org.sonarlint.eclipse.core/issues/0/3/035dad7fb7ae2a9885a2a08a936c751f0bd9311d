@@ -1,11 +1,0 @@
-
-xsquid:UselessImportCheck"2Remove this unused import 'org.hibernate.Session'.(È¹›§ùÿÿÿÿ8½êİ¢.H–RMINORZ
-CODE_SMELL
-qsquid:UselessImportCheck"0Remove this unused import 'javax.inject.Inject'.(ì–íÔ8¦È½Í.HçRMINORZ
-CODE_SMELL
-squid:UselessImportCheck"9Remove this unused import 'org.hibernate.SessionFactory'.(ñ¦«¬şÿÿÿÿ8¦È½Í.HéRMINORZ
-CODE_SMELL
-|squid:S00119"IRename this generic name to match the regular expression '^[A-Z][0-9]?$'.(å’›ãúÿÿÿÿHèRMINORZ
-CODE_SMELL
-wsquid:UselessImportCheck"6Remove this unused import 'org.hibernate.Transaction'.(ìÌè³8®–ì¤.HÄRMINORZ
-CODE_SMELL

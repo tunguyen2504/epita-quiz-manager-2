@@ -9,7 +9,7 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import fr.epita.quizmanager.datamodel.Student;
-import fr.epita.quizmanager.services.StudentDAO;
+import fr.epita.quizmanager.services.dao.StudentDAO;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations = "/applicationContext.xml")

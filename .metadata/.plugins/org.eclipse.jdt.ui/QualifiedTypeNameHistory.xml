@@ -17,16 +17,12 @@
     <fullyQualifiedTypeName name="javax.transaction.Transaction"/>
     <fullyQualifiedTypeName name="javax.persistence.PersistenceContext"/>
     <fullyQualifiedTypeName name="javax.persistence.EntityManager"/>
-    <fullyQualifiedTypeName name="javax.persistence.Query"/>
-    <fullyQualifiedTypeName name="javax.transaction.Transactional"/>
-    <fullyQualifiedTypeName name="javax.transaction.Transactional.TxType"/>
     <fullyQualifiedTypeName name="javax.persistence.ManyToOne"/>
     <fullyQualifiedTypeName name="javax.persistence.OneToMany"/>
     <fullyQualifiedTypeName name="javax.persistence.JoinTable"/>
     <fullyQualifiedTypeName name="javax.persistence.CascadeType"/>
     <fullyQualifiedTypeName name="fr.epita.quizmanager.services.AnswerDAO"/>
     <fullyQualifiedTypeName name="javax.persistence.JoinColumn"/>
-    <fullyQualifiedTypeName name="javax.persistence.Column"/>
     <fullyQualifiedTypeName name="java.util.List"/>
     <fullyQualifiedTypeName name="java.lang.Exception"/>
     <fullyQualifiedTypeName name="fr.epita.quizmanager.tests.TestExamDataService"/>
@@ -38,4 +34,13 @@
     <fullyQualifiedTypeName name="fr.epita.quizmanager.datamodel.Question"/>
     <fullyQualifiedTypeName name="fr.epita.quizmanager.services.QuestionDAO"/>
     <fullyQualifiedTypeName name="java.util.ArrayList"/>
+    <fullyQualifiedTypeName name="java.util.Map"/>
+    <fullyQualifiedTypeName name="java.util.Map.Entry"/>
+    <fullyQualifiedTypeName name="javax.persistence.Query"/>
+    <fullyQualifiedTypeName name="java.util.LinkedHashMap"/>
+    <fullyQualifiedTypeName name="javax.persistence.Column"/>
+    <fullyQualifiedTypeName name="fr.epita.quizmanager.datamodel.User"/>
+    <fullyQualifiedTypeName name="fr.epita.quizmanager.services.dao.UserDAO"/>
+    <fullyQualifiedTypeName name="javax.transaction.Transactional"/>
+    <fullyQualifiedTypeName name="javax.transaction.Transactional.TxType"/>
 </qualifiedTypeNameHistroy>

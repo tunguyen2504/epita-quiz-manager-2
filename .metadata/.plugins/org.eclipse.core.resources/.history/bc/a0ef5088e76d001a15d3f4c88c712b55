@@ -1,0 +1,75 @@
+package fr.epita.quizmanager.services.business;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.inject.Inject;
+import javax.transaction.Transactional;
+import javax.transaction.Transactional.TxType;
+
+import fr.epita.quizmanager.datamodel.Answer;
+import fr.epita.quizmanager.datamodel.Question;
+import fr.epita.quizmanager.datamodel.User;
+import fr.epita.quizmanager.services.dao.AnswerDAO;
+import fr.epita.quizmanager.services.dao.QuestionDAO;
+import fr.epita.quizmanager.services.dao.UserDAO;
+
+public class ExamDataService {
+	
+	@Inject
+	UserDAO userDAO;
+
+	@Inject
+	QuestionDAO questionDAO;
+
+	@Inject
+	AnswerDAO answerDAO;
+
+	@Transactional(value = TxType.REQUIRED)
+	public void saveAnswerToQuestion(User user, Question question, Answer answer) throws Exception {
+		if (user.getId() == null) {
+			throw new NullPointerException("User is not found.");
+		} else if (userDAO.getById(user.getId()) == null) {
+			throw new NullPointerException("User is not found.");
+		}
+		
+		if (question.getId() != null) {
+			if (questionDAO.getById(question.getId()) != null) {
+//				if (answer.getId() == null) {
+//					answerDAO.create(answer);
+//				}
+				
+//				List<Answer> qAnswers = new ArrayList<Answer>();
+//				List<Answer> uAnswers = new ArrayList<Answer>();
+//				if (question.getAnswers() != null) {
+//					qAnswers = question.getAnswers();
+//					qAnswers.add(answer);
+//				} else {
+//					qAnswers.add(answer);
+//				}
+//				question.setAnswers(qAnswers);
+				answer.setQuestion(question);
+				answer.setUser(user);
+				answerDAO.create(answer);
+//				questionDAO.update(question);
+//				if (user.getAnswers() != null) {
+//					uAnswers = user.getAnswers();
+//					uAnswers.add(answer);
+//				} else {
+//					uAnswers.add(answer);
+//				}
+//				user.setAnswers(qAnswers);
+//				userDAO.update(user);
+			} else {
+				throw new NullPointerException("Question is not found.");
+			}
+		} else {
+			throw new NullPointerException("Question is not found.");
+		}
+	}
+	
+//	public void answerToQuestion(User user, Question question, Answer answer) {
+//		
+//	};
+
+}

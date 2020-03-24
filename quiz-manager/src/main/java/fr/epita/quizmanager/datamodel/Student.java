@@ -1,5 +1,6 @@
 package fr.epita.quizmanager.datamodel;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -12,8 +13,10 @@ public class Student {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
+	@Column(name = "S_ID")
 	private Long id;
 	
+	@Column(name = "S_NAME")
 	private String name;
 
 	public Long getId() {

@@ -5,6 +5,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -18,6 +20,14 @@ public class Answer {
 
 	@Column(name = "A_CONTENT")
 	private String content;
+	
+	@ManyToOne
+	@JoinColumn(name="A_QUESTION_FK")
+	private Question question;
+	
+	@ManyToOne
+	@JoinColumn(name="A_USER_FK", nullable = false)
+	private User user;
 
 	public Long getId() {
 		return id;
@@ -33,6 +43,22 @@ public class Answer {
 
 	public void setContent(String content) {
 		this.content = content;
+	}
+
+	public Question getQuestion() {
+		return question;
+	}
+
+	public void setQuestion(Question question) {
+		this.question = question;
+	}
+
+	public User getUser() {
+		return user;
+	}
+
+	public void setUser(User user) {
+		this.user = user;
 	}
 	
 }
