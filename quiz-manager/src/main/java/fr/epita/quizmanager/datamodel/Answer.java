@@ -26,7 +26,7 @@ public class Answer {
 	private Question question;
 	
 	@ManyToOne
-	@JoinColumn(name="A_USER_FK", nullable = false)
+	@JoinColumn(name="A_USER_FK")
 	private User user;
 
 	public Long getId() {

@@ -1,5 +1,4 @@
-D:\EPITA\Term 2\Advanced Java\quiz-manager\quiz-manager\src\test\java\fr\epita\quizmanager\tests\TestAnswerDAO.java
-D:\EPITA\Term 2\Advanced Java\quiz-manager\quiz-manager\src\test\java\fr\epita\quizmanager\tests\TestQuestionDAO.java
-D:\EPITA\Term 2\Advanced Java\quiz-manager\quiz-manager\src\test\java\fr\epita\quizmanager\tests\TestStudentDAO.java
-D:\EPITA\Term 2\Advanced Java\quiz-manager\quiz-manager\src\test\java\fr\epita\quizmanager\tests\TestExamDataService.java
-D:\EPITA\Term 2\Advanced Java\quiz-manager\quiz-manager\src\test\java\fr\epita\quizmanager\tests\TestGenericDAO.java
+D:\EPITA\Term 2\Advanced Java\quiz-manager\quiz-manager\src\test\java\fr\epita\quizmanager\tests\unit\TestAnswerDAO.java
+D:\EPITA\Term 2\Advanced Java\quiz-manager\quiz-manager\src\test\java\fr\epita\quizmanager\tests\integration\TestExamDataService.java
+D:\EPITA\Term 2\Advanced Java\quiz-manager\quiz-manager\src\test\java\fr\epita\quizmanager\tests\unit\TestGenericDAO.java
+D:\EPITA\Term 2\Advanced Java\quiz-manager\quiz-manager\src\test\java\fr\epita\quizmanager\tests\unit\TestQuestionDAO.java

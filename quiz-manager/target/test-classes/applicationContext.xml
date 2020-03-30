@@ -68,24 +68,12 @@
 	</bean>
 	<tx:annotation-driven />
 
-	<bean id="questionDAO"
-		class="fr.epita.quizmanager.services.dao.QuestionDAO">
-	</bean>
-
-	<bean id="answerDAO"
-		class="fr.epita.quizmanager.services.dao.AnswerDAO">
-	</bean>
-
-	<bean id="studentDAO"
-		class="fr.epita.quizmanager.services.dao.StudentDAO">
-	</bean>
-
-	<bean id="userDAO"
-		class="fr.epita.quizmanager.services.dao.UserDAO">
-	</bean>
-
-	<bean id="examDataService"
-		class="fr.epita.quizmanager.services.business.ExamDataService">
-	</bean>
+	<context:component-scan
+		base-package="fr.epita.quizmanager.services.dao, fr.epita.quizmanager.services.business">
+		<context:include-filter type="regex"
+			expression=".*DAO" />
+		<context:include-filter type="regex"
+			expression=".*DataService" />
+	</context:component-scan>
 
 </beans>

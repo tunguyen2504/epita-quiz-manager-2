@@ -17,16 +17,6 @@ j
 :src/main/java/fr/epita/quizmanager/datamodel/Question.java,2\9\2911c99a3c3afe63ec5d4055ce1a886cf5c1018b
 Y
 )src/test/resources/applicationContext.xml,9\0\90e4db001345f412ca14bafc1c6532a68a721a5a
-m
-=src/test/java/fr/epita/quizmanager/tests/TestQuestionDAO.java,3\4\34260e7413e01d9ac69ece6295685affd3bafd51
-l
-<src/test/java/fr/epita/quizmanager/tests/TestStudentDAO.java,b\5\b59914da2ccda54bbd1e311ad9e0c88f1c1ea2d7
-l
-<src/test/java/fr/epita/quizmanager/tests/TestGenericDAO.java,b\e\bef63213a055743e1bf11bf420ac684b7078f8d6
-k
-;src/test/java/fr/epita/quizmanager/tests/TestAnswerDAO.java,1\9\19f11229a125287d1dacbcac7303da12c297be30
-q
-Asrc/test/java/fr/epita/quizmanager/tests/TestExamDataService.java,0\c\0cffd1fc3b9b23eb62cc58c044d690b51687720e
 f
 6src/main/java/fr/epita/quizmanager/datamodel/User.java,7\e\7e83f40fb73e85d4d06ea5a12bbcbca351520b97
 o
@@ -37,3 +27,7 @@ l
 <src/main/java/fr/epita/quizmanager/services/dao/UserDAO.java,d\0\d0cf9856e494e96f38c508b08384f4a3137cc0da
 p
 @src/main/java/fr/epita/quizmanager/services/dao/QuestionDAO.java,e\3\e30917cd63425b198d841ef5e7ecf8323eaefff8
+p
+@src/test/java/fr/epita/quizmanager/tests/unit/TestAnswerDAO.java,b\6\b6784117ea8f44df6eec28436a26010b27dcf9c0
+}
+Msrc/test/java/fr/epita/quizmanager/tests/integration/TestExamDataService.java,6\4\643918ebd7f1db9effe4ee36061aa65082ee646f

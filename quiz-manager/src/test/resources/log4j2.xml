@@ -16,7 +16,7 @@
     </RollingRandomAccessFile>
   </Appenders>
   <Loggers>
-    <Root level="ERROR">
+    <Root level="INFO">
       <AppenderRef ref="Console"/>
       <AppenderRef ref="RollingRandomAccessFile" />
     </Root>
