@@ -1,0 +1,12 @@
+D:\EPITA\Term 2\Advanced Java\quiz-manager\quiz-core\src\main\java\fr\epita\quizmanager\datamodel\Question.java
+D:\EPITA\Term 2\Advanced Java\quiz-manager\quiz-core\src\main\java\fr\epita\quizmanager\services\dao\GenericDAO.java
+D:\EPITA\Term 2\Advanced Java\quiz-manager\quiz-core\src\main\java\fr\epita\quizmanager\datamodel\MCQChoice.java
+D:\EPITA\Term 2\Advanced Java\quiz-manager\quiz-core\src\main\java\fr\epita\quizmanager\services\business\ExamDataService.java
+D:\EPITA\Term 2\Advanced Java\quiz-manager\quiz-core\src\main\java\fr\epita\quizmanager\datamodel\Exam.java
+D:\EPITA\Term 2\Advanced Java\quiz-manager\quiz-core\src\main\java\fr\epita\quizmanager\services\dao\ExamDAO.java
+D:\EPITA\Term 2\Advanced Java\quiz-manager\quiz-core\src\main\java\fr\epita\quizmanager\datamodel\MCQAnswer.java
+D:\EPITA\Term 2\Advanced Java\quiz-manager\quiz-core\src\main\java\fr\epita\quizmanager\services\dao\MCQChoiceDAO.java
+D:\EPITA\Term 2\Advanced Java\quiz-manager\quiz-core\src\main\java\fr\epita\quizmanager\services\dao\UserDAO.java
+D:\EPITA\Term 2\Advanced Java\quiz-manager\quiz-core\src\main\java\fr\epita\quizmanager\services\dao\QuestionDAO.java
+D:\EPITA\Term 2\Advanced Java\quiz-manager\quiz-core\src\main\java\fr\epita\quizmanager\datamodel\User.java
+D:\EPITA\Term 2\Advanced Java\quiz-manager\quiz-core\src\main\java\fr\epita\quizmanager\services\dao\MCQAnswerDAO.java

@@ -1,2 +1,4 @@
 /.metadata/
 Servers/
+quiz-rest.trace.db
+.sonarlint/
