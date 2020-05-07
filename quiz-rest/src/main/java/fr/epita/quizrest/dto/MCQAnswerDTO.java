@@ -1,11 +1,17 @@
 package fr.epita.quizrest.dto;
 
+import fr.epita.quizmanager.datamodel.MCQAnswer;
+
 public class MCQAnswerDTO {
 
 	private String content;
 	private QuestionDTO question;
 	private UserDTO user;
 	private ExamDTO exam;
+	
+	public MCQAnswerDTO(MCQAnswer answer) {
+		this.content = answer.getContent();
+	}
 
 	public String getContent() {
 		return content;

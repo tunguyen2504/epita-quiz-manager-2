@@ -44,7 +44,7 @@ public class TestQuestionDataService {
 			choice.setContent("Java is a programming language " + i);
 			choices.add(choice);
 		}
-		questionDs.saveQuestion(question, choices);
+		questionDs.createQuestion(question, choices);
 		// then
 		try (Connection connection = ds.getConnection();
 				PreparedStatement stmt1 = connection.prepareStatement("SELECT Q_ID FROM QUESTIONS WHERE Q_TITLE = ?");

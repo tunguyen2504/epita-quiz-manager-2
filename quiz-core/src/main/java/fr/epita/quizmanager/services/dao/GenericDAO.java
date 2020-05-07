@@ -34,6 +34,7 @@ public abstract class GenericDAO<T, ID> {
 
 	@Transactional(value = TxType.REQUIRED)
 	public void delete(T entity) {
+		entity = em.merge(entity);
 		em.refresh(entity);
 		em.remove(entity);
 	}

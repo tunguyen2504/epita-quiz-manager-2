@@ -14,6 +14,7 @@ import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import javax.persistence.UniqueConstraint;
 
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 
@@ -31,9 +32,10 @@ public class Exam {
 
 	@JsonManagedReference
 	@ManyToMany(fetch = FetchType.EAGER)
-	@JoinTable(name = "EXAM_QUESTION", joinColumns = @JoinColumn(name = "E_ID", referencedColumnName = "E_ID"), inverseJoinColumns = @JoinColumn(name = "Q_ID", referencedColumnName = "Q_ID"))
+	@JoinTable(name = "EXAM_QUESTION", joinColumns = @JoinColumn(name = "E_ID", referencedColumnName = "E_ID"), inverseJoinColumns = @JoinColumn(name = "Q_ID", referencedColumnName = "Q_ID"), uniqueConstraints = @UniqueConstraint(columnNames = {
+			"E_ID", "Q_ID" }))
 	private List<Question> questions;
-	
+
 	@JsonManagedReference
 	@OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL, mappedBy = "exam")
 	private List<MCQAnswer> mcqAnswers;

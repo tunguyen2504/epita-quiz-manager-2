@@ -1,37 +1,52 @@
 package fr.epita.quizrest.resources;
 
 import java.net.URI;
-import java.net.URISyntaxException;
 import java.util.ArrayList;
 import java.util.List;
 
 import javax.inject.Inject;
 import javax.ws.rs.Consumes;
+import javax.ws.rs.DELETE;
 import javax.ws.rs.POST;
+import javax.ws.rs.PUT;
 import javax.ws.rs.Path;
+import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
+import javax.ws.rs.core.Response.Status;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.springframework.web.bind.annotation.RequestBody;
 
 import fr.epita.quizmanager.datamodel.MCQChoice;
 import fr.epita.quizmanager.datamodel.Question;
 import fr.epita.quizmanager.services.business.QuestionDataService;
+import fr.epita.quizmanager.services.dao.MCQChoiceDAO;
+import fr.epita.quizmanager.services.dao.QuestionDAO;
 import fr.epita.quizrest.dto.MCQChoiceDTO;
 import fr.epita.quizrest.dto.QuestionDTO;
 
 @Path("/question")
 public class QuestionResource {
 
+	private static final Logger LOGGER = LogManager.getLogger(ExamResource.class);
+
 	@Inject
 	QuestionDataService questionDS;
 
+	@Inject
+	QuestionDAO questionDAO;
+
+	@Inject
+	MCQChoiceDAO mcqChoiceDAO;
+
 	@POST
-	@Path("/save")
+	@Path("/create")
 	@Consumes(value = MediaType.APPLICATION_JSON)
 	@Produces(value = MediaType.APPLICATION_JSON)
-	public Response saveQuestion(@RequestBody QuestionDTO questionDTO) {
+	public Response createQuestion(@RequestBody QuestionDTO questionDTO) {
 		Question question = new Question();
 		question.setTitle(questionDTO.getTitle());
 		List<MCQChoice> choices = new ArrayList<MCQChoice>();
@@ -41,13 +56,72 @@ public class QuestionResource {
 			choice.setIsValid(choiceDTO.getIsValid());
 			choices.add(choice);
 		}
-		questionDS.saveQuestion(question, choices);
+		
 		try {
-			return Response.ok(question).build();
+			questionDS.createQuestion(question, choices);
+			QuestionDTO resQuestionDTO = new QuestionDTO(question);
+			return Response.created(new URI("/rest/question/create" + resQuestionDTO.getId())).entity(resQuestionDTO)
+					.build();
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 		return Response.serverError().build();
 	}
 
+	@PUT
+	@Path("/{id}/update")
+	@Consumes(value = MediaType.APPLICATION_JSON)
+	@Produces(value = MediaType.APPLICATION_JSON)
+	public Response updateQuestion(@PathParam("id") long id, @RequestBody QuestionDTO questionDTO) {
+		Question question = questionDAO.getById(id);
+		question.setTitle(questionDTO.getTitle());
+		List<MCQChoice> choices = new ArrayList<MCQChoice>();
+		if (questionDTO.getChoices() != null && !questionDTO.getChoices().isEmpty()) {
+			for (MCQChoiceDTO choiceDTO : questionDTO.getChoices()) {
+				MCQChoice choice = mcqChoiceDAO.getById(choiceDTO.getId());
+				choice.setContent(choiceDTO.getContent());
+				choice.setIsValid(choiceDTO.getIsValid());
+				choices.add(choice);
+			}
+		} else {
+			try {
+				choices = questionDS.getAllChoices(question);
+			} catch (NullPointerException e) {
+				LOGGER.error(e.getMessage());
+				return Response.status(Status.NOT_FOUND).entity(e.getMessage()).build();
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+		try {
+			questionDS.updateQuestion(question, choices);
+			QuestionDTO resQuestionDTO = new QuestionDTO(question);
+			return Response.ok(resQuestionDTO).build();
+		} catch (NullPointerException e) {
+			LOGGER.error(e.getMessage());
+			return Response.status(Status.NOT_FOUND).entity(e.getMessage()).build();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		return Response.serverError().build();
+	}
+
+//	@DELETE
+//	@Path("/{id}/delete")
+//	@Produces(value = MediaType.APPLICATION_JSON)
+//	public Response deleteQuestion(@PathParam("id") long id) {
+//		Question question = questionDAO.getById(id);
+//		try {
+//			questionDS.deleteQuestion(question);
+//			return Response.ok("Question with id " + id + " has been deleted.").build();
+//		} catch (NullPointerException e) {
+//			LOGGER.error(e.getMessage());
+//			return Response.status(Status.NOT_FOUND).entity(e.getMessage()).build();
+//		} catch (Exception e) {
+//			e.printStackTrace();
+//		}
+//		
+//		return Response.serverError().build();
+//	}
 }
