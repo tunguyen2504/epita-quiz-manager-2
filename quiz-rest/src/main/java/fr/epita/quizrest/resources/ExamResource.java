@@ -52,7 +52,15 @@ public class ExamResource {
 	@Produces(value = MediaType.APPLICATION_JSON)
 	public Response createExam(@RequestBody ExamDTO examDTO) {
 		Exam exam = new Exam();
-		exam.setTitle(examDTO.getTitle());
+		if (examDTO.getTitle() == null || examDTO.getTitle().trim().isEmpty()) {
+			try {
+				return Response.status(Status.BAD_REQUEST).entity("Exam title cannot be empty.").build();
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		} else {
+			exam.setTitle(examDTO.getTitle());
+		}
 		
 		try {
 			examDAO.create(exam);
@@ -124,6 +132,40 @@ public class ExamResource {
 	
 		return Response.serverError().build();
 	}
+	
+	@PUT
+	@Path("/{id}/update")
+	@Consumes(value = MediaType.APPLICATION_JSON)
+	@Produces(value = MediaType.APPLICATION_JSON)
+	public Response updateExam(@PathParam("id") long id, @RequestBody ExamDTO examDTO) {
+		Exam exam = examDAO.getById(id);
+		if (examDTO.getTitle() == null || examDTO.getTitle().trim().isEmpty()) {
+			try {
+				return Response.status(Status.BAD_REQUEST).entity("Exam title cannot be empty.").build();
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		} else {
+			exam.setTitle(examDTO.getTitle());
+		}
+		List<Question> questions = new ArrayList<Question>();
+		List<QuestionDTO> questionDTOs = examDTO.getQuestions();
+		for (QuestionDTO questionDTO : questionDTOs) {
+			Question question = questionDAO.getById(questionDTO.getId());
+			questions.add(question);
+		}
+		exam.setQuestions(questions);
+		
+		try {
+			examDAO.update(exam);
+			ExamDTO resExamDTO = new ExamDTO(exam);
+			return Response.ok(resExamDTO).build();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		return Response.serverError().build();
+	}
 
 	@GET
 	@Path("/{id}/getAllQuestions")
@@ -143,6 +185,26 @@ public class ExamResource {
 			e.printStackTrace();
 		}
 
+		return Response.serverError().build();
+	}
+	
+	@GET
+	@Path("/getAllExams")
+	@Produces(value = MediaType.APPLICATION_JSON)
+	public Response getAllExams() {
+		List<Exam> exams = examDS.getAllExams();
+		List<ExamDTO> examDTOs = new ArrayList<ExamDTO>();
+		for (Exam e : exams) {
+			ExamDTO eDTO = new ExamDTO(e, e.getQuestions());
+			examDTOs.add(eDTO);
+		}
+		
+		try {
+			return Response.ok(examDTOs).build();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
 		return Response.serverError().build();
 	}
 	

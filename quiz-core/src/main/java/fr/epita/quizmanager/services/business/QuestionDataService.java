@@ -1,9 +1,13 @@
 package fr.epita.quizmanager.services.business;
 
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
 
 import javax.inject.Inject;
+import javax.sql.DataSource;
 import javax.transaction.Transactional;
 import javax.transaction.Transactional.TxType;
 
@@ -23,6 +27,9 @@ public class QuestionDataService {
 	
 	@Inject
 	ExamDataService examDS;
+	
+	@Inject
+	DataSource ds;
 	
 	@Transactional(value = TxType.REQUIRED)
 	public void createQuestion(Question question, List<MCQChoice> choices) {
@@ -53,6 +60,23 @@ public class QuestionDataService {
 			throw new NullPointerException("Question is not found.");
 		}
 		return question.getChoices();
+	}
+	
+	public List<Question> getAllQuestions() {
+		List<Question> questions = new ArrayList<Question>();
+		try (Connection connection = ds.getConnection();
+				PreparedStatement stmt = connection.prepareStatement("SELECT Q_ID FROM QUESTIONS");) {
+			ResultSet rs = stmt.executeQuery();
+			while (rs.next()) {
+				Long id = rs.getLong("Q_ID");
+				Question question = questionDAO.getById(id);
+				questions.add(question);
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		return questions;
 	}
 	
 //	@Transactional(value = TxType.REQUIRED)

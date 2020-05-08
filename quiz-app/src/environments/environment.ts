@@ -3,7 +3,9 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  examApi: "http://localhost:8080/quiz-rest/rest/exam/{apiPath}",
+  questionApi: "http://localhost:8080/quiz-rest/rest/question/{apiPath}"
 };
 
 /*

@@ -1,10 +1,13 @@
 package fr.epita.quizmanager.services.business;
 
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 import javax.inject.Inject;
+import javax.sql.DataSource;
 import javax.transaction.Transactional;
 import javax.transaction.Transactional.TxType;
 
@@ -30,6 +33,9 @@ public class ExamDataService {
 
 	@Inject
 	MCQAnswerDAO answerDAO;
+
+	@Inject
+	DataSource ds;
 
 	@Transactional(value = TxType.REQUIRED)
 	public void saveAnswerToQuestion(User user, Exam exam, Question question, MCQAnswer answer) {
@@ -64,7 +70,7 @@ public class ExamDataService {
 		exam.getQuestions().addAll(questions);
 		examDAO.update(exam);
 	}
-	
+
 	@Transactional(value = TxType.REQUIRED)
 	public void removeQuestionsFromExam(Exam exam, List<Question> questions) {
 		if (exam == null || exam.getId() == null || examDAO.getById(exam.getId()) == null) {
@@ -96,13 +102,31 @@ public class ExamDataService {
 		questionsOfExam.removeAll(questionsToRemove);
 		examDAO.update(exam);
 	}
-	
+
 	public List<Question> getAllQuestions(Exam exam) {
 		if (exam == null || exam.getId() == null || examDAO.getById(exam.getId()) == null) {
 			throw new NullPointerException("Exam is not found.");
 		}
-		
+
 		return exam.getQuestions();
+	}
+
+	public List<Exam> getAllExams() {
+		List<Exam> exams = new ArrayList<Exam>();
+		try (Connection connection = ds.getConnection();
+				PreparedStatement stmt = connection.prepareStatement("SELECT E_ID FROM EXAMS");) {
+			ResultSet rs = stmt.executeQuery();
+			while (rs.next()) {
+				Long id = rs.getLong("E_ID");
+				Exam exam = examDAO.getById(id);
+				exams.add(exam);
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		return exams;
+
 	}
 
 }

@@ -1,0 +1,98 @@
+<div>
+  <h2 style="margin-left: 40px">Exam Management</h2>
+</div>
+<div *ngIf="step == 0 && !showExamDetails">
+  <div>
+    <button style="margin-left: 40px" (click)="goToCreateExam()">Create exam</button>
+  </div>
+  <table *ngIf="examList" style="width:80%">
+    <tr>
+      <th>#</th>
+      <th>Title</th>
+      <th>Number of Questions</th>
+      <th></th>
+    </tr>
+    <tr *ngFor="let e of examList">
+      <td style="text-align: center" class="counterCell"></td>
+      <td>{{ e.title }}</td>
+      <td style="text-align: center">{{ e.questions ? e.questions.length : 0 }}</td>
+      <td style="text-align: center"><button (click)="getExamDetailsById(e)">
+          Show </button></td>
+    </tr>
+  </table>
+  <p style="margin-left: 40px" *ngIf="!examList"> There is no exam to be
+    displayed.</p>
+</div>
+
+<div *ngIf="showExamDetails">
+  <div style="margin-left: 40px">
+    <h3>Exam: {{ exam?.title }}
+      <button style="margin-left: 30px" (click)="editSelectedExam(exam)">Edit
+        Exam</button>
+    </h3>
+    <ul *ngIf="exam?.questions">
+      <h4>Question List</h4>
+      <li *ngFor="let question of exam.questions; let i= index"
+        style="list-style-type: none">
+        <span>{{ i + 1 }}. </span><span>{{ question.title }} </span>
+        <ul *ngIf="question?.choices">
+          <li *ngFor="let choice of question.choices">
+            <span [ngClass]="{'text-bold': choice.isValid}">{{ choice.content }}</span>
+          </li>
+        </ul>
+        <br>
+      </li>
+    </ul>
+    <p *ngIf="!exam?.questions">There is no question in this exam.</p>
+    <button (click)="back()"> Back </button>
+  </div>
+</div>
+
+<div>
+  <div style="margin-left: 40px" *ngIf="step == 1">
+    <h3>Create Exam</h3>
+    <div>
+      <span>Exam Title: </span><input [(ngModel)]="newExam.title" type="text"
+        required>
+    </div>
+    <div style="padding: 20px">
+      <button style="margin:10px" (click)="backStep()">Back</button>
+      <button (click)="createExam(newExam)" [disabled]="!newExam.title">Next</button>
+    </div>
+  </div>
+
+  <div style="margin-left: 40px" *ngIf="step == 2">
+    <h3>Add questions to Exam</h3>
+    <div>
+      <h4>Exam Title: {{ newExam?.title }}</h4>
+    </div>
+    <div *ngIf="questionsToAdd.length> 0">
+      <div *ngFor="let question of questionsToAdd">
+        <input type="checkbox" name="question-title" value="{{ question.title }}" [checked]="questionsChosen.indexOf(question) > -1" (change)="updateQuestionsToAddList(question)">
+        <label for="question-title"> {{ question.title }}
+          <ul *ngIf="question?.choices">
+            <li *ngFor="let choice of question.choices">
+              <span [ngClass]="{'text-bold': choice.isValid}">{{ choice.content }}</span>
+            </li>
+          </ul>
+        </label>
+
+      </div>
+    </div>
+    <div *ngIf="questionsToAdd.length == 0">
+      <p> There is no question. Please go to Question Management to create one.</p>
+    </div>
+    <button style="margin-right: 10px" (click)="backStep()">Back</button>
+    <button (click)="submitExam(newExam)">Submit</button>
+  </div>
+
+  <div style="margin-left: 40px" *ngIf="step == 3">
+    <div *ngIf="examCreated">
+      <h3>Exam has been successfully created</h3>
+    </div>
+    <div *ngIf="!examCreated">
+      <h3>Failed to create the exam. Please try again!</h3>
+    </div>
+    <button style="margin-right: 10px" (click)="reload()">Back to Exam Management</button>
+  </div>
+</div>
