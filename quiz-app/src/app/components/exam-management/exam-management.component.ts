@@ -14,9 +14,9 @@ export class ExamManagementComponent implements OnInit {
 
   public exam: Exam;
   public newExam: Exam = new Exam();
-  public examList = Array<Exam>();
-  public questionsToAdd = Array<Question>();
-  public questionsChosen = Array<Question>();
+  public examList = new Array<Exam>();
+  public questionsToAdd = new Array<Question>();
+  public questionsChosen = new Array<Question>();
   public showExamDetails = false;
   public step = 0;
   public examCreated: boolean;

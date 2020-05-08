@@ -21,6 +21,11 @@ export class QuestionService {
     return this.httpClient.post(this.CREATE_QUESTION_URL, question);
   }
 
+  updateQuestion(question: Question): any {
+    this.apiCall = this.UPDATE_QUESTION_URL.replace('{id}', question.id.toString());
+    return this.httpClient.put(this.apiCall, question);
+  }
+
   getAllQuestions(): any {
     return this.httpClient.get(this.GET_ALL_QUESTION_URL);
   }

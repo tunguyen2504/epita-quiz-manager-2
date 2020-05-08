@@ -10,13 +10,15 @@ import { QuestionService } from './services/question/question.service';
 import { LandingPageComponent } from './components/landing-page/landing-page.component';
 import { ExamManagementComponent } from './components/exam-management/exam-management.component';
 import { ExamEditComponent } from './components/exam-edit/exam-edit.component';
+import { QuestionManagementComponent } from './components/question-management/question-management.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LandingPageComponent,
     ExamManagementComponent,
-    ExamEditComponent
+    ExamEditComponent,
+    QuestionManagementComponent
   ],
   imports: [
     BrowserModule,

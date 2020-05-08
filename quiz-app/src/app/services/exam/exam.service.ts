@@ -14,9 +14,10 @@ export class ExamService {
   public CREATE_EXAM_URL = EXAM_API.replace('{apiPath}', 'create');
   public ADD_QUESTION_URL = EXAM_API.replace('{apiPath}', '{id}/addQuestion');
   public REMOVE_QUESTION_URL = EXAM_API.replace('{apiPath}', '{id}/removeQuestion');
+  public UPDATE_EXAM_URL = EXAM_API.replace('{apiPath}', '{id}/update')
   public GET_ALL_QUESTION_URL = EXAM_API.replace('{apiPath}', '{id}/getAllQuestions');
   public GET_ALL_EXAM_URL = EXAM_API.replace('{apiPath}', 'getAllExams');
-  public UPDATE_EXAM_URL = EXAM_API.replace('{apiPath}', '{id}/update')
+  public GET_NOT_INCLUDED_QUESTIONS_URL = EXAM_API.replace('{apiPath}', '{id}/getNotIncludedQuestions');
   apiCall: string;
 
   constructor(private httpClient: HttpClient) { }
@@ -31,6 +32,17 @@ export class ExamService {
     return this.httpClient.put(this.apiCall, body);
   }
 
+  removeQuestionsFromExam(examId: number, questionList: Array<Question>): any {
+    this.apiCall = this.REMOVE_QUESTION_URL.replace('{id}', examId.toString());
+    let body = {'list': questionList};
+    return this.httpClient.put(this.apiCall, body);
+  }
+
+  updateExam(exam: Exam): any {
+    this.apiCall = this.UPDATE_EXAM_URL.replace('{id}', exam.id.toString());
+    return this.httpClient.put(this.apiCall, exam);
+  }
+
   getAllQuestionsByExamId(examId: number): any {
     this.apiCall = this.GET_ALL_QUESTION_URL.replace('{id}', examId.toString());
     return this.httpClient.get(this.apiCall);
@@ -38,5 +50,10 @@ export class ExamService {
 
   getAllExams(): any {
     return this.httpClient.get(this.GET_ALL_EXAM_URL);
+  }
+
+  getNotIncludedQuestionsByExamId(examId: number): any {
+    this.apiCall = this.GET_NOT_INCLUDED_QUESTIONS_URL.replace('{id}', examId.toString());
+    return this.httpClient.get(this.apiCall);
   }
 }

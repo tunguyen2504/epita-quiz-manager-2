@@ -22,6 +22,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import fr.epita.quizmanager.datamodel.Exam;
 import fr.epita.quizmanager.datamodel.Question;
 import fr.epita.quizmanager.services.business.ExamDataService;
+import fr.epita.quizmanager.services.business.QuestionDataService;
 import fr.epita.quizmanager.services.dao.ExamDAO;
 import fr.epita.quizmanager.services.dao.MCQAnswerDAO;
 import fr.epita.quizmanager.services.dao.QuestionDAO;
@@ -36,6 +37,9 @@ public class ExamResource {
 
 	@Inject
 	ExamDataService examDS;
+	
+	@Inject
+	QuestionDataService questionDS;
 
 	@Inject
 	MCQAnswerDAO answerDAO;
@@ -158,7 +162,7 @@ public class ExamResource {
 		
 		try {
 			examDAO.update(exam);
-			ExamDTO resExamDTO = new ExamDTO(exam);
+			ExamDTO resExamDTO = new ExamDTO(exam, exam.getQuestions());
 			return Response.ok(resExamDTO).build();
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -201,6 +205,38 @@ public class ExamResource {
 		
 		try {
 			return Response.ok(examDTOs).build();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		return Response.serverError().build();
+	}
+	
+	@GET
+	@Path("/{id}/getNotIncludedQuestions")
+	@Produces(value = MediaType.APPLICATION_JSON)
+	public Response getNotIncludedQuestions(@PathParam("id") long id) {
+		List<Question> allQuestions = questionDS.getAllQuestions();
+		List<QuestionDTO> questionNotIncludedDTOs = new ArrayList<QuestionDTO>();
+		
+		for (Question q : allQuestions) {
+			boolean isIncluded = false;
+			for (Exam e : q.getExams()) {
+				System.out.println(e.getId());
+				if (e.getId() == id) {
+					isIncluded = true;
+				}	
+			}
+			if (isIncluded) {
+				continue;
+			} else {
+				QuestionDTO qDTO = new QuestionDTO(q);
+				questionNotIncludedDTOs.add(qDTO);
+			}
+		}
+		
+		try {
+			return Response.ok(questionNotIncludedDTOs).build();
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

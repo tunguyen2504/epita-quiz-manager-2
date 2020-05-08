@@ -1,29 +1,48 @@
 <div>
+  <h1 style="margin-left: 40px; cursor: pointer" routerLink = "/" routerLinkActive = "active">Quiz Manager</h1>
+</div>
+<div>
   <h2 style="margin-left: 40px">Exam Management</h2>
 </div>
 <div style="margin-left: 40px">
   <h3>Edit Exam</h3>
   <span>Exam Title: </span><input [(ngModel)]="exam.title" required>
   <br>
-  <ul *ngIf="exam?.questions">
+  <div *ngIf="!showNotIncludedList">
     <h4>Question List</h4>
-    <li *ngFor="let question of exam.questions; let i= index"
-      style="list-style-type: none">
-      <span>{{ i + 1 }}. </span><span>{{ question.title }} </span>
-      <div>
-        <img src="assets/img/bin.png" alt="remove question" style="width:20px">
-      </div>
-      <ul *ngIf="question?.choices">
-        <li *ngFor="let choice of question.choices">
-          <span [ngClass]="{'text-bold': choice.isValid}">{{ choice.content }}</span>
-        </li>
-      </ul>
+    <button style="margin:10px" (click)="showQuestions(exam?.id)">Add questions</button>
+    <ul *ngIf="questionList">
+      <li *ngFor="let question of questionList; let i= index"
+        style="list-style-type: none">
+        <span>{{ i + 1 }}. </span><span>{{ question.title }} </span>
+        <button style="margin-left: 10px" (click)="removeQuestion(question)">Remove</button>
+        <ul *ngIf="question?.choices">
+          <li *ngFor="let choice of question.choices">
+            <span [ngClass]="{'text-bold': choice.isValid}">{{ choice.content }}</span>
+          </li>
+        </ul>
 
-    </li>
-  </ul>
-  <p *ngIf="!exam?.questions">There is no question in this exam.</p>
-  <div>
-    <button style="margin-right: 10px" (click)="back()">Back</button>
-    <button [disabled]="!exam.title" (click)="saveExam()">Save</button>
+      </li>
+    </ul>
+    <p *ngIf="!questionList">There is no question in this exam.</p>
+    <div>
+      <button style="margin-right: 10px" (click)="back()">Back</button>
+      <button [disabled]="!exam.title" (click)="saveExam()">Save</button>
+    </div>
+  </div>
+  <div *ngIf="showNotIncludedList">
+    <div *ngFor="let question of notIncludedQuestionList">
+      <input type="checkbox" name="question-title" value="{{ question.title }}" [checked]="questionsChosen.indexOf(question) > -1" (change)="updateQuestionsToAddList(question)">
+      <label for="question-title"> {{ question.title }}
+        <ul *ngIf="question?.choices">
+          <li *ngFor="let choice of question.choices">
+            <span [ngClass]="{'text-bold': choice.isValid}">{{ choice.content }}</span>
+          </li>
+        </ul>
+      </label>
+
+    </div>
+    <button style="margin-right: 10px" (click)="showNotIncludedList = false">Back</button>
+    <button (click)="addQuestions(questionList, questionsChosen)">Add questions</button>
   </div>
 </div>
