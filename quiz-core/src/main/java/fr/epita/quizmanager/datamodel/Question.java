@@ -16,6 +16,10 @@ import javax.persistence.Table;
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 
+/**
+ * @author Anh Tu
+ *
+ */
 @Entity
 @Table(name = "QUESTIONS")
 public class Question {

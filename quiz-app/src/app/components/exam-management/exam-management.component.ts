@@ -1,3 +1,5 @@
+/* author: Anh Tu NGUYEN */
+
 import { Component, OnInit } from '@angular/core';
 import { ExamService } from 'src/app/services/exam/exam.service';
 import { Exam } from 'src/app/datamodel/Exam';
@@ -24,6 +26,11 @@ export class ExamManagementComponent implements OnInit {
   constructor(private examService: ExamService, private questionService: QuestionService, private route: ActivatedRoute, private router: Router) { }
 
   ngOnInit(): void {
+    // this.exam = new Exam();
+    // this.newExam = new Exam();
+    // this.examList = new Array<Exam>();
+    // this.questionsToAdd = new Array<Question>();
+    // this.questionsChosen = new Array<Question>();
     this.getAllExams();
   }
 

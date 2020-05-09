@@ -1,3 +1,5 @@
+/* author: Anh Tu NGUYEN */
+
 import { MCQChoice } from './MCQChoice';
 
 export class Question {

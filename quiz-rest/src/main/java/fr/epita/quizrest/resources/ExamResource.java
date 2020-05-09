@@ -20,16 +20,25 @@ import org.apache.logging.log4j.Logger;
 import org.springframework.web.bind.annotation.RequestBody;
 
 import fr.epita.quizmanager.datamodel.Exam;
+import fr.epita.quizmanager.datamodel.MCQAnswer;
 import fr.epita.quizmanager.datamodel.Question;
+import fr.epita.quizmanager.datamodel.User;
 import fr.epita.quizmanager.services.business.ExamDataService;
 import fr.epita.quizmanager.services.business.QuestionDataService;
 import fr.epita.quizmanager.services.dao.ExamDAO;
 import fr.epita.quizmanager.services.dao.MCQAnswerDAO;
 import fr.epita.quizmanager.services.dao.QuestionDAO;
+import fr.epita.quizmanager.services.dao.UserDAO;
 import fr.epita.quizrest.dto.ExamDTO;
 import fr.epita.quizrest.dto.GenericListDTO;
+import fr.epita.quizrest.dto.GradeDTO;
+import fr.epita.quizrest.dto.MCQAnswerDTO;
 import fr.epita.quizrest.dto.QuestionDTO;
 
+/**
+ * @author Anh Tu
+ *
+ */
 @Path("/exam")
 public class ExamResource {
 
@@ -37,7 +46,7 @@ public class ExamResource {
 
 	@Inject
 	ExamDataService examDS;
-	
+
 	@Inject
 	QuestionDataService questionDS;
 
@@ -49,6 +58,9 @@ public class ExamResource {
 
 	@Inject
 	ExamDAO examDAO;
+
+	@Inject
+	UserDAO userDAO;
 
 	@POST
 	@Path("/create")
@@ -65,7 +77,7 @@ public class ExamResource {
 		} else {
 			exam.setTitle(examDTO.getTitle());
 		}
-		
+
 		try {
 			examDAO.create(exam);
 			ExamDTO resExamDTO = new ExamDTO(exam);
@@ -86,7 +98,7 @@ public class ExamResource {
 		List<Question> questions = new ArrayList<Question>();
 		List<QuestionDTO> questionDTOs = list.getList();
 		List<Question> allQuestions = new ArrayList<Question>();
-		
+
 		for (QuestionDTO questionDTO : questionDTOs) {
 			Question question = questionDAO.getById(questionDTO.getId());
 			questions.add(question);
@@ -117,7 +129,7 @@ public class ExamResource {
 		List<Question> questions = new ArrayList<Question>();
 		List<QuestionDTO> questionDTOs = list.getList();
 		List<Question> allQuestions = new ArrayList<Question>();
-		
+
 		for (QuestionDTO questionDTO : questionDTOs) {
 			Question question = questionDAO.getById(questionDTO.getId());
 			questions.add(question);
@@ -133,10 +145,10 @@ public class ExamResource {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-	
+
 		return Response.serverError().build();
 	}
-	
+
 	@PUT
 	@Path("/{id}/update")
 	@Consumes(value = MediaType.APPLICATION_JSON)
@@ -159,7 +171,7 @@ public class ExamResource {
 			questions.add(question);
 		}
 		exam.setQuestions(questions);
-		
+
 		try {
 			examDAO.update(exam);
 			ExamDTO resExamDTO = new ExamDTO(exam, exam.getQuestions());
@@ -167,7 +179,7 @@ public class ExamResource {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		
+
 		return Response.serverError().build();
 	}
 
@@ -191,7 +203,7 @@ public class ExamResource {
 
 		return Response.serverError().build();
 	}
-	
+
 	@GET
 	@Path("/getAllExams")
 	@Produces(value = MediaType.APPLICATION_JSON)
@@ -202,30 +214,30 @@ public class ExamResource {
 			ExamDTO eDTO = new ExamDTO(e, e.getQuestions());
 			examDTOs.add(eDTO);
 		}
-		
+
 		try {
 			return Response.ok(examDTOs).build();
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		
+
 		return Response.serverError().build();
 	}
-	
+
 	@GET
 	@Path("/{id}/getNotIncludedQuestions")
 	@Produces(value = MediaType.APPLICATION_JSON)
 	public Response getNotIncludedQuestions(@PathParam("id") long id) {
 		List<Question> allQuestions = questionDS.getAllQuestions();
 		List<QuestionDTO> questionNotIncludedDTOs = new ArrayList<QuestionDTO>();
-		
+
 		for (Question q : allQuestions) {
 			boolean isIncluded = false;
 			for (Exam e : q.getExams()) {
 				System.out.println(e.getId());
 				if (e.getId() == id) {
 					isIncluded = true;
-				}	
+				}
 			}
 			if (isIncluded) {
 				continue;
@@ -234,14 +246,57 @@ public class ExamResource {
 				questionNotIncludedDTOs.add(qDTO);
 			}
 		}
-		
+
 		try {
 			return Response.ok(questionNotIncludedDTOs).build();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
+		return Response.serverError().build();
+	}
+
+	@POST
+	@Path("/answerQuestion")
+	@Consumes(value = MediaType.APPLICATION_JSON)
+	@Produces(value = MediaType.APPLICATION_JSON)
+	public Response answerToQuestion(@RequestBody MCQAnswerDTO mcqAnswerDTO) {
+		MCQAnswer answer = new MCQAnswer();
+		Exam exam = examDAO.getById(mcqAnswerDTO.getExam().getId());
+		Question question = questionDAO.getById(mcqAnswerDTO.getQuestion().getId());
+		User user = userDAO.getById(mcqAnswerDTO.getUser().getId());
+		answer.setContent(mcqAnswerDTO.getContent());
+
+		try {
+			examDS.saveAnswerToQuestion(user, exam, question, answer);
+			MCQAnswerDTO resAnswerDTO = new MCQAnswerDTO(answer);
+			return Response.ok(resAnswerDTO).build();
+		} catch (NullPointerException e) {
+			return Response.status(Status.NOT_FOUND).entity(e.getMessage()).build();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
+		return Response.serverError().build();
+	}
+	
+	@GET
+	@Path("/{examId}/getGrade/{userId}")
+	@Produces(value = MediaType.APPLICATION_JSON)
+	public Response answerToQuestion(@PathParam("examId") long examId, @PathParam("userId") long userId) {
+		Exam exam = examDAO.getById(examId);
+		User user = userDAO.getById(userId);
+		try {
+			String result = examDS.getExamGradeByUser(user, exam);
+			GradeDTO gradeDTO = new GradeDTO(result);
+			return Response.ok(gradeDTO).build();
+		} catch (NullPointerException e) {
+			return Response.status(Status.NOT_FOUND).entity(e.getMessage()).build();
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 		
 		return Response.serverError().build();
 	}
-	
+
 }

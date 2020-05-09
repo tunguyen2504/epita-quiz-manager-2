@@ -1,12 +1,13 @@
 <div>
-  <h1 style="margin-left: 40px; cursor: pointer" routerLink = "/" routerLinkActive = "active">Quiz Manager</h1>
+  <h1 style="margin-left: 40px; cursor: pointer" routerLink="/landing" routerLinkActive="active">Quiz
+    Manager</h1>
 </div>
 <div>
   <h2 style="margin-left: 40px">Exam Management</h2>
 </div>
-<div *ngIf="step == 0 && !showExamDetails">
+<div *ngIf="step == 0 && !showExamDetails" style="margin-left: 40px" >
   <div>
-    <button style="margin-left: 40px" (click)="goToCreateExam()">Create exam</button>
+    <button (click)="goToCreateExam()">Create exam</button>
   </div>
   <table *ngIf="examList" style="width:80%">
     <tr>
@@ -23,7 +24,7 @@
           Show </button></td>
     </tr>
   </table>
-  <p style="margin-left: 40px" *ngIf="!examList"> There is no exam to be
+  <p *ngIf="!examList"> There is no exam to be
     displayed.</p>
 </div>
 
@@ -71,15 +72,17 @@
     </div>
     <div *ngIf="questionsToAdd.length> 0">
       <div *ngFor="let question of questionsToAdd">
-        <input type="checkbox" name="question-title" value="{{ question.title }}" [checked]="questionsChosen.indexOf(question) > -1" (change)="updateQuestionsToAddList(question)">
+        <input type="checkbox" name="question-title" value="{{ question.title
+          }}" [checked]="questionsChosen.indexOf(question)> -1"
+        (change)="updateQuestionsToAddList(question)">
         <label for="question-title"> {{ question.title }}
           <ul *ngIf="question?.choices">
             <li *ngFor="let choice of question.choices">
-              <span [ngClass]="{'text-bold': choice.isValid}">{{ choice.content }}</span>
+              <span [ngClass]="{'text-bold': choice.isValid}">{{ choice.content
+                }}</span>
             </li>
           </ul>
         </label>
-
       </div>
     </div>
     <div *ngIf="questionsToAdd.length == 0">
@@ -96,6 +99,7 @@
     <div *ngIf="!examCreated">
       <h3>Failed to create the exam. Please try again!</h3>
     </div>
-    <button style="margin-right: 10px" (click)="reload()">Back to Exam Management</button>
+    <button style="margin-right: 10px" (click)="reload()">Back to Exam
+      Management</button>
   </div>
 </div>

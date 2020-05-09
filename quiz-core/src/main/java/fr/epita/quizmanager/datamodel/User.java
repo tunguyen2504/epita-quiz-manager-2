@@ -4,6 +4,7 @@ import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -12,6 +13,10 @@ import javax.persistence.Table;
 
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 
+/**
+ * @author Anh Tu
+ *
+ */
 @Entity
 @Table(name = "USERS")
 public class User {
@@ -25,7 +30,7 @@ public class User {
 	private String loginName;
 	
 	@JsonManagedReference
-	@OneToMany(mappedBy = "user") // ALL: Strong aggregation, no cascade: weak aggregation
+	@OneToMany(fetch = FetchType.LAZY, mappedBy = "user") // ALL: Strong aggregation, no cascade: weak aggregation
 	private List<MCQAnswer> answers;
 	
 	@Column(name = "IS_TEACHER")

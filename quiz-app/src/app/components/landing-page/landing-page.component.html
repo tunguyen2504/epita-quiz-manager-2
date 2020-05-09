@@ -1,6 +1,7 @@
-<div>
-  <h1 style="margin-left: 40px; cursor: pointer" routerLink = "/" routerLinkActive = "active">Quiz Manager</h1>
+<div style="margin-left: 40px">
+  <h1 style="cursor: pointer" routerLink = "/landing" routerLinkActive = "active">Quiz Manager</h1>
+  <h4>Welcome {{ loginName }} !</h4>
 </div>
-<button style="margin: 10px 10px; width: 200px; height: 30px" routerLink = "/exam-management" routerLinkActive = "active"> Exam Management </button>
-<button style="margin: 10px 10px; width: 200px; height: 30px" routerLink = "/question-management" routerLinkActive = "active"> Question Management </button>
+<button style="margin: 10px 10px; width: 200px; height: 30px" [disabled]="isTeacher == 'false'" routerLink = "/exam-management" routerLinkActive = "active"> Exam Management </button>
+<button style="margin: 10px 10px; width: 200px; height: 30px" [disabled]="isTeacher == 'false'" routerLink = "/question-management" routerLinkActive = "active"> Question Management </button>
 <button style="margin: 10px 10px; width: 200px; height: 30px" routerLink = "/take-exam" routerLinkActive = "active"> Take an Exam </button>

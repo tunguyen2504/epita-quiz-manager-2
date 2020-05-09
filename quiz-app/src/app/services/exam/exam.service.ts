@@ -1,8 +1,12 @@
+/* author: Anh Tu NGUYEN */
+
 import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment';
 import { HttpClient } from '@angular/common/http';
 import { Exam } from '../../datamodel/Exam';
 import { Question } from 'src/app/datamodel/Question';
+import { MCQAnswer } from 'src/app/datamodel/MCQAnswer';
+import { User } from 'src/app/datamodel/User';
 
 const EXAM_API: string = environment.examApi;
 
@@ -18,6 +22,8 @@ export class ExamService {
   public GET_ALL_QUESTION_URL = EXAM_API.replace('{apiPath}', '{id}/getAllQuestions');
   public GET_ALL_EXAM_URL = EXAM_API.replace('{apiPath}', 'getAllExams');
   public GET_NOT_INCLUDED_QUESTIONS_URL = EXAM_API.replace('{apiPath}', '{id}/getNotIncludedQuestions');
+  public ANSWER_TO_QUESTION_URL = EXAM_API.replace('{apiPath}', 'answerQuestion');
+  public GET_GRADE_URL = EXAM_API.replace('{apiPath}', '{examId}/getGrade/{userId}')
   apiCall: string;
 
   constructor(private httpClient: HttpClient) { }
@@ -54,6 +60,16 @@ export class ExamService {
 
   getNotIncludedQuestionsByExamId(examId: number): any {
     this.apiCall = this.GET_NOT_INCLUDED_QUESTIONS_URL.replace('{id}', examId.toString());
+    return this.httpClient.get(this.apiCall);
+  }
+
+  answerToQuestion(answer: MCQAnswer) {
+    return this.httpClient.post(this.ANSWER_TO_QUESTION_URL, answer);
+  }
+
+  getExamGrade(exam: Exam, user: User) {
+    this.apiCall = this.GET_GRADE_URL.replace('{examId}', exam.id.toString());
+    this.apiCall = this.apiCall.replace('{userId}', user.id.toString());
     return this.httpClient.get(this.apiCall);
   }
 }

@@ -1,3 +1,5 @@
+/* author: Anh Tu NGUYEN */
+
 import { Question } from './Question';
 
 export class Exam {

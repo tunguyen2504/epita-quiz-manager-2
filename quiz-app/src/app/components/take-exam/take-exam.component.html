@@ -1,0 +1,54 @@
+<div>
+  <h1 style="margin-left: 40px; cursor: pointer" routerLink="/landing" routerLinkActive="active">Quiz Manager</h1>
+</div>
+<div>
+  <h2 style="margin-left: 40px">Take an Exam</h2>
+</div>
+<div *ngIf="!isTakingExam && !hasFinished">
+  <table *ngIf="examList" style="width:80%">
+    <tr>
+      <th>#</th>
+      <th>Title</th>
+      <th>Number of Questions</th>
+      <th></th>
+    </tr>
+    <tr *ngFor="let e of examList">
+      <td style="text-align: center" class="counterCell"></td>
+      <td>{{ e.title }}</td>
+      <td style="text-align: center">{{ e.questions ? e.questions.length : 0 }}</td>
+      <td style="text-align: center"><button (click)="takeExam(e)"> Take exam
+        </button></td>
+    </tr>
+  </table>
+  <p style="margin-left: 40px" *ngIf="!examList"> There is no exam to be
+    displayed.</p>
+</div>
+
+<div *ngIf="isTakingExam">
+  <div style="margin-left: 40px">
+    <h3>Exam: {{ exam?.title }}</h3>
+    <ul *ngIf="exam?.questions">
+      <h4>Question List</h4>
+      <li *ngFor="let question of exam.questions; let i= index" style="list-style-type: none">
+        <span>{{ i + 1 }}. </span><span>{{ question.title }} </span>
+        <div *ngIf="question?.choices">
+          <div *ngFor="let choice of question.choices">
+            <input type="checkbox" name="choice-content" [checked]="answerList.indexOf(choice)> -1" (change)="addChoiceToAnswerList(exam, question, choice)">
+            <label for="choice-content"> {{ choice.content }}</label>
+          </div>
+        </div>
+        <br>
+      </li>
+    </ul>
+    <p *ngIf="!exam?.questions">There is no question in this exam.</p>
+    <button style="margin:10px" (click)="back()"> Back </button>
+    <button (click)="submitAnswers(answerList, exam)"> Submit </button>
+  </div>
+</div>
+
+<div *ngIf="!isTakingExam && hasFinished">
+  <h3>Exam: {{ exam?.title }}</h3>
+  <h4>Congratulations! You have finished the exam.</h4>
+  <h4>Your grade is: <button (click)="getExamGrade(exam, user)">Click here!</button> {{ result?.grade }}</h4>
+  <button style="margin:10px" (click)="back()"> Back </button>
+</div>

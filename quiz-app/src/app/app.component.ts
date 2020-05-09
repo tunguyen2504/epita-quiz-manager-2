@@ -1,3 +1,5 @@
+/* author: Anh Tu NGUYEN */
+
 import { Component } from '@angular/core';
 
 @Component({

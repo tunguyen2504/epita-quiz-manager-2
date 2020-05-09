@@ -2,6 +2,10 @@ package fr.epita.quizrest.dto;
 
 import fr.epita.quizmanager.datamodel.MCQChoice;
 
+/**
+ * @author Anh Tu
+ *
+ */
 public class MCQChoiceDTO {
 
 	private Long id;

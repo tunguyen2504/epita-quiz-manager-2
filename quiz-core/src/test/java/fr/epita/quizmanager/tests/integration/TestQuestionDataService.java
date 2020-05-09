@@ -21,6 +21,10 @@ import fr.epita.quizmanager.datamodel.MCQChoice;
 import fr.epita.quizmanager.datamodel.Question;
 import fr.epita.quizmanager.services.business.QuestionDataService;
 
+/**
+ * @author Anh Tu
+ *
+ */
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations = "/applicationContext.xml")
 public class TestQuestionDataService {

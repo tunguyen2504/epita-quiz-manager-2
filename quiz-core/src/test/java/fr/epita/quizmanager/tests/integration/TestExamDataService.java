@@ -24,6 +24,10 @@ import fr.epita.quizmanager.services.dao.MCQAnswerDAO;
 import fr.epita.quizmanager.services.dao.QuestionDAO;
 import fr.epita.quizmanager.services.dao.UserDAO;
 
+/**
+ * @author Anh Tu
+ *
+ */
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations = "/applicationContext.xml")
 public class TestExamDataService {

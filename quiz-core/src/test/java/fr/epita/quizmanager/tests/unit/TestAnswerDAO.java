@@ -18,6 +18,10 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import fr.epita.quizmanager.datamodel.MCQAnswer;
 import fr.epita.quizmanager.services.dao.MCQAnswerDAO;
 
+/**
+ * @author Anh Tu
+ *
+ */
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations = "/applicationContext.xml")
 public class TestAnswerDAO {

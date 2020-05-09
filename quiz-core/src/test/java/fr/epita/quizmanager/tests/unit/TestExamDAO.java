@@ -1,7 +1,5 @@
 package fr.epita.quizmanager.tests.unit;
 
-import static org.junit.Assert.assertEquals;
-
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -24,6 +22,10 @@ import fr.epita.quizmanager.datamodel.Question;
 import fr.epita.quizmanager.services.dao.ExamDAO;
 import fr.epita.quizmanager.services.dao.QuestionDAO;
 
+/**
+ * @author Anh Tu
+ *
+ */
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations = "/applicationContext.xml")
 public class TestExamDAO {

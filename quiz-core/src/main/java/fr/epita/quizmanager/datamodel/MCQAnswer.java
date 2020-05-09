@@ -11,6 +11,10 @@ import javax.persistence.Table;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
 
+/**
+ * @author Anh Tu
+ *
+ */
 @Entity
 @Table(name = "MCQ_ANSWERS")
 public class MCQAnswer {

@@ -29,6 +29,10 @@ import fr.epita.quizmanager.services.dao.QuestionDAO;
 import fr.epita.quizrest.dto.MCQChoiceDTO;
 import fr.epita.quizrest.dto.QuestionDTO;
 
+/**
+ * @author Anh Tu
+ *
+ */
 @Path("/question")
 public class QuestionResource {
 

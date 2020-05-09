@@ -1,3 +1,5 @@
+/* author: Anh Tu NGUYEN */
+
 export class MCQChoice {
 
   public id: number;

@@ -11,12 +11,15 @@ import javax.sql.DataSource;
 import javax.transaction.Transactional;
 import javax.transaction.Transactional.TxType;
 
-import fr.epita.quizmanager.datamodel.Exam;
 import fr.epita.quizmanager.datamodel.MCQChoice;
 import fr.epita.quizmanager.datamodel.Question;
 import fr.epita.quizmanager.services.dao.MCQChoiceDAO;
 import fr.epita.quizmanager.services.dao.QuestionDAO;
 
+/**
+ * @author Anh Tu
+ *
+ */
 public class QuestionDataService {
 
 	@Inject
@@ -79,19 +82,4 @@ public class QuestionDataService {
 		return questions;
 	}
 	
-//	@Transactional(value = TxType.REQUIRED)
-//	public void deleteQuestion(Question question) {
-//		if (question == null || question.getId() == null || questionDAO.getById(question.getId()) == null) {
-//			throw new NullPointerException("Question is not found.");
-//		}
-//		for (MCQChoice choice : question.getChoices()) {
-//			mcqChoiceDAO.delete(choice);
-//		}
-//		for (Exam exam : question.getExams()) {
-//			List<Question> questions = new ArrayList<Question>();
-//			questions.add(question);
-//			examDS.removeQuestionsFromExam(exam, questions);
-//		}
-//		questionDAO.delete(question);
-//	}
 }

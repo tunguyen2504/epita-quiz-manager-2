@@ -4,6 +4,10 @@ import java.util.Map;
 
 import fr.epita.quizmanager.datamodel.MCQChoice;
 
+/**
+ * @author Anh Tu
+ *
+ */
 public class MCQChoiceDAO extends GenericDAO<MCQChoice, Long> {
 
 	@Override

@@ -1,3 +1,5 @@
+/* author: Anh Tu NGUYEN */
+
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router, RoutesRecognized } from '@angular/router';
 import { Exam } from 'src/app/datamodel/Exam';

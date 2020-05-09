@@ -13,13 +13,19 @@ import javax.transaction.Transactional.TxType;
 
 import fr.epita.quizmanager.datamodel.Exam;
 import fr.epita.quizmanager.datamodel.MCQAnswer;
+import fr.epita.quizmanager.datamodel.MCQChoice;
 import fr.epita.quizmanager.datamodel.Question;
 import fr.epita.quizmanager.datamodel.User;
 import fr.epita.quizmanager.services.dao.ExamDAO;
 import fr.epita.quizmanager.services.dao.MCQAnswerDAO;
+import fr.epita.quizmanager.services.dao.MCQChoiceDAO;
 import fr.epita.quizmanager.services.dao.QuestionDAO;
 import fr.epita.quizmanager.services.dao.UserDAO;
 
+/**
+ * @author Anh Tu
+ *
+ */
 public class ExamDataService {
 
 	@Inject
@@ -33,6 +39,9 @@ public class ExamDataService {
 
 	@Inject
 	MCQAnswerDAO answerDAO;
+	
+	@Inject
+	MCQChoiceDAO mcqChoiceDAO;
 
 	@Inject
 	DataSource ds;
@@ -126,7 +135,34 @@ public class ExamDataService {
 		}
 		
 		return exams;
-
+	}
+	
+	public String getExamGradeByUser(User user, Exam exam) {
+		if (user == null || user.getId() == null || userDAO.getById(user.getId()) == null) {
+			throw new NullPointerException("User is not found.");
+		}
+		if (exam == null || exam.getId() == null || examDAO.getById(exam.getId()) == null) {
+			throw new NullPointerException("Exam is not found.");
+		}
+		int point = 0;
+		int total = exam.getQuestions().size();
+		try (Connection connection = ds.getConnection();
+				PreparedStatement stmt = connection.prepareStatement("SELECT A_CONTENT, A_QUESTION_FK FROM MCQ_ANSWERS WHERE A_EXAM_FK = ? AND A_USER_FK = ?");) {
+			stmt.setLong(1, exam.getId());
+			stmt.setLong(2, user.getId());
+			ResultSet rs = stmt.executeQuery();
+			while (rs.next()) {
+				Long choiceId = Long.parseLong(rs.getString("A_CONTENT"));
+				MCQChoice choice = mcqChoiceDAO.getById(choiceId);
+				if (choice.getIsValid()) {
+					point++;
+				}
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		return point + "/" + total;
 	}
 
 }

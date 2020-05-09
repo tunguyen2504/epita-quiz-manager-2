@@ -4,6 +4,10 @@ import java.util.Map;
 
 import fr.epita.quizmanager.datamodel.MCQAnswer;
 
+/**
+ * @author Anh Tu
+ *
+ */
 public class MCQAnswerDAO extends GenericDAO<MCQAnswer, Long>{
 
 	@Override
@@ -20,21 +24,5 @@ public class MCQAnswerDAO extends GenericDAO<MCQAnswer, Long>{
 	public Class<MCQAnswer> getEntityClass() {
 		return MCQAnswer.class;
 	}
-	
-//	public List<MCQAnswer> search(MCQAnswer answer){
-//		
-//		Query searchQuery = em.createQuery("from MCQAnswer where content = :pContent");
-//		String content = answer.getContent();
-//		searchQuery.setParameter("pContent", content);
-//		List<MCQAnswer> resultList = searchQuery.getResultList();
-//		
-//		return resultList;
-//	}
-//	
-//	public MCQAnswer getById(Long id) {
-//		return em.find(MCQAnswer.class, id);
-//	}
-	
-	
 	
 }

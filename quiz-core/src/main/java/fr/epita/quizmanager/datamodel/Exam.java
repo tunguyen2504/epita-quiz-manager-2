@@ -18,6 +18,11 @@ import javax.persistence.UniqueConstraint;
 
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 
+/**
+ * @author Anh Tu
+ *
+ */
+
 @Entity
 @Table(name = "EXAMS")
 public class Exam {

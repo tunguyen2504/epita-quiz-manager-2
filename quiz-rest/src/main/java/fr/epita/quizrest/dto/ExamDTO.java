@@ -4,16 +4,17 @@ import java.util.ArrayList;
 import java.util.List;
 
 import fr.epita.quizmanager.datamodel.Exam;
-import fr.epita.quizmanager.datamodel.MCQAnswer;
-import fr.epita.quizmanager.datamodel.MCQChoice;
 import fr.epita.quizmanager.datamodel.Question;
 
+/**
+ * @author Anh Tu
+ *
+ */
 public class ExamDTO {
 
 	private Long id;
 	private String title;
 	private List<QuestionDTO> questions;
-	private List<MCQAnswerDTO> answers;
 
 	public ExamDTO() {
 
@@ -59,14 +60,6 @@ public class ExamDTO {
 
 	public void setQuestions(List<QuestionDTO> questions) {
 		this.questions = questions;
-	}
-
-	public List<MCQAnswerDTO> getAnswers() {
-		return answers;
-	}
-
-	public void setAnswers(List<MCQAnswerDTO> answers) {
-		this.answers = answers;
 	}
 
 }

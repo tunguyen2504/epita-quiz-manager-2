@@ -8,6 +8,10 @@ import javax.persistence.Query;
 import fr.epita.quizmanager.datamodel.Exam;
 import fr.epita.quizmanager.datamodel.Question;
 
+/**
+ * @author Anh Tu
+ *
+ */
 public class ExamDAO extends GenericDAO<Exam, Long> {
 
 	@Override
@@ -25,11 +29,4 @@ public class ExamDAO extends GenericDAO<Exam, Long> {
 		return Exam.class;
 	}
 	
-//	public List<Question> getQuestionsByExam(Exam exam) {
-////		Query searchQuery = em.createQuery("from Exam where id = pExamId");
-////		searchQuery.setParameter("pExamId", exam.getId());
-////		List<Question> questions = searchQuery.getResultList();
-//		
-//		return exam.getQuestions();
-//	}
 }

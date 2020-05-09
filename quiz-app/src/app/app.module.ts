@@ -1,3 +1,5 @@
+/* author: Anh Tu NGUYEN */
+
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms'
@@ -11,6 +13,9 @@ import { LandingPageComponent } from './components/landing-page/landing-page.com
 import { ExamManagementComponent } from './components/exam-management/exam-management.component';
 import { ExamEditComponent } from './components/exam-edit/exam-edit.component';
 import { QuestionManagementComponent } from './components/question-management/question-management.component';
+import { LoginComponent } from './components/login/login.component';
+import { UserService } from './services/user/user.service';
+import { TakeExamComponent } from './components/take-exam/take-exam.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +23,9 @@ import { QuestionManagementComponent } from './components/question-management/qu
     LandingPageComponent,
     ExamManagementComponent,
     ExamEditComponent,
-    QuestionManagementComponent
+    QuestionManagementComponent,
+    LoginComponent,
+    TakeExamComponent
   ],
   imports: [
     BrowserModule,
@@ -26,7 +33,7 @@ import { QuestionManagementComponent } from './components/question-management/qu
     FormsModule,
     HttpClientModule
   ],
-  providers: [ExamService, QuestionService],
+  providers: [ExamService, QuestionService, UserService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

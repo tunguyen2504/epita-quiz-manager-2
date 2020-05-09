@@ -1,0 +1,377 @@
+{
+	"info": {
+		"_postman_id": "c3b571c3-5afb-41dc-b6e4-49b4a91e6629",
+		"name": "epita-quiz-rest",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Exam API",
+			"item": [
+				{
+					"name": "Create Exam",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"title\": \"Sample Test Exam 1\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/quiz-rest/rest/exam/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"quiz-rest",
+								"rest",
+								"exam",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add Question to Exam",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"list\": [\n\t\t{\n\t\t\t\"id\": 130\n\t\t},\n\t\t{\n\t\t\t\"id\": 161\n\t\t}\n\t]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/quiz-rest/rest/exam/193/addQuestion",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"quiz-rest",
+								"rest",
+								"exam",
+								"193",
+								"addQuestion"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Remove Question from Exam",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"list\": [\n\t\t{\n\t\t\t\"id\": 353\n\t\t},\n\t\t{\n\t\t\t\"id\": 481\n\t\t}\n\t]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/quiz-rest/rest/exam/417/removeQuestion",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"quiz-rest",
+								"rest",
+								"exam",
+								"417",
+								"removeQuestion"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get all Question from Exam",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/quiz-rest/rest/exam/417/getAllQuestions",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"quiz-rest",
+								"rest",
+								"exam",
+								"417",
+								"getAllQuestions"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get all Exams",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/quiz-rest/rest/exam/getAllExams",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"quiz-rest",
+								"rest",
+								"exam",
+								"getAllExams"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get not included Questions By Exam ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/quiz-rest/rest/exam/545/getNotIncludedQuestions",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"quiz-rest",
+								"rest",
+								"exam",
+								"545",
+								"getNotIncludedQuestions"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get grade of exam",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/quiz-rest/rest/exam/1147/getGrade/1121",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"quiz-rest",
+								"rest",
+								"exam",
+								"1147",
+								"getGrade",
+								"1121"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Question API",
+			"item": [
+				{
+					"name": "Create Question",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\": \"Sample question 3 for Test 1\",\n    \"choices\": [\n    \t{\n    \t\t\"content\": \"First choice\",\n    \t\t\"isValid\": true\n    \t},\n    \t{\n    \t\t\"content\": \"Second choice\",\n    \t\t\"isValid\": false\n    \t},\n    \t{\n    \t\t\"content\": \"Third choice\",\n    \t\t\"isValid\": false\n    \t},\n    \t{\n    \t\t\"content\": \"Last choice\",\n    \t\t\"isValid\": false\n    \t}\n    \t]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/quiz-rest/rest/question/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"quiz-rest",
+								"rest",
+								"question",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Question",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"title\": \"Test Question 12 (updated 4)\",\n    \"choices\": [\n        {\n            \"id\": 514,\n            \"content\": \"12q updated 4 1st choice\",\n            \"isValid\": false\n        },\n        {\n            \"id\": 515,\n            \"content\": \"12q updated 4 2nd choice\",\n            \"isValid\": false\n        },\n        {\n            \"id\": 516,\n            \"content\": \"12q updated 4 3rd choice\",\n            \"isValid\": false\n        },\n        {\n            \"id\": 517,\n            \"content\": \"12q updated 4 4th choice\",\n            \"isValid\": true\n        }\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/quiz-rest/rest/question/513/update",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"quiz-rest",
+								"rest",
+								"question",
+								"513",
+								"update"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Question",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/quiz-rest/rest/question/551/delete",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"quiz-rest",
+								"rest",
+								"question",
+								"551",
+								"delete"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get all Questions",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/quiz-rest/rest/question/getAllQuestions",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"quiz-rest",
+								"rest",
+								"question",
+								"getAllQuestions"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "User API",
+			"item": [
+				{
+					"name": "Create User (Login)",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"loginName\": \"tunguyen\",\n\t\"isTeacher\": true\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/quiz-rest/rest/user/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"quiz-rest",
+								"rest",
+								"user",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get User by loginName",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/quiz-rest/rest/user/tunguyennnnn/getUser",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"quiz-rest",
+								"rest",
+								"user",
+								"tunguyennnnn",
+								"getUser"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"protocolProfileBehavior": {}
+}

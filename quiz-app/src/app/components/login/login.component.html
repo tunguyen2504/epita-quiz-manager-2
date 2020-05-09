@@ -1,0 +1,9 @@
+<div>
+    <h1 style="margin-left: 40px; cursor: pointer" routerLink = "/" routerLinkActive = "active">Quiz Manager</h1>
+</div>
+<div>
+  <label for="login">Username: </label><input style="width: 240px" type="text" name="login" required [(ngModel)]="loginName" required>
+  <label style="margin-left: 20px" for="isTeacher">Tick if you are a teacher: </label><input type="checkbox" [(ngModel)]="isTeacher" [checked]="isTeacher">
+  <button style="margin: 10px 10px" (click)="login(loginName)" [disabled]="!loginName">Login</button>
+
+</div>

@@ -1,5 +1,5 @@
 <div>
-  <h1 style="margin-left: 40px; cursor: pointer" routerLink = "/" routerLinkActive = "active">Quiz Manager</h1>
+  <h1 style="margin-left: 40px; cursor: pointer" routerLink = "/landing" routerLinkActive = "active">Quiz Manager</h1>
 </div>
 <div>
   <h2 style="margin-left: 40px">Exam Management</h2>
@@ -11,7 +11,7 @@
   <div *ngIf="!showNotIncludedList">
     <h4>Question List</h4>
     <button style="margin:10px" (click)="showQuestions(exam?.id)">Add questions</button>
-    <ul *ngIf="questionList">
+    <ul *ngIf="questionList.length > 0">
       <li *ngFor="let question of questionList; let i= index"
         style="list-style-type: none">
         <span>{{ i + 1 }}. </span><span>{{ question.title }} </span>
@@ -24,7 +24,7 @@
 
       </li>
     </ul>
-    <p *ngIf="!questionList">There is no question in this exam.</p>
+    <p *ngIf="questionList.length == 0">There is no question in this exam.</p>
     <div>
       <button style="margin-right: 10px" (click)="back()">Back</button>
       <button [disabled]="!exam.title" (click)="saveExam()">Save</button>

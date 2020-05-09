@@ -6,6 +6,10 @@ import java.util.List;
 import fr.epita.quizmanager.datamodel.MCQChoice;
 import fr.epita.quizmanager.datamodel.Question;
 
+/**
+ * @author Anh Tu
+ *
+ */
 public class QuestionDTO {
 
 	private Long id;

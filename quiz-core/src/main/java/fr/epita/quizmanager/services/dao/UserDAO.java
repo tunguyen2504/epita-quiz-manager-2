@@ -4,6 +4,10 @@ import java.util.Map;
 
 import fr.epita.quizmanager.datamodel.User;
 
+/**
+ * @author Anh Tu
+ *
+ */
 public class UserDAO extends GenericDAO<User, Long> {
 
 	@Override

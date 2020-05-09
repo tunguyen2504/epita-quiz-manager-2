@@ -1,16 +1,19 @@
 <div>
-  <h1 style="margin-left: 40px; cursor: pointer" routerLink = "/" routerLinkActive = "active">Quiz Manager</h1>
+  <h1 style="margin-left: 40px; cursor: pointer" routerLink="/landing" routerLinkActive="active">Quiz
+    Manager</h1>
 </div>
 <div>
   <h2 style="margin-left: 40px">Question Management</h2>
 </div>
 
 <div style="margin-left: 40px" *ngIf="!createStep && !editStep">
-  <ul *ngIf="questionList">
-    <h4>All Questions
-      <button style="margin-left: 40px" (click)="goToCreateQuestion()">Create question</button>
-    </h4>
-    <li *ngFor="let question of questionList; let i= index" style="list-style-type: none">
+  <h4>All Questions
+    <button style="margin-left: 40px" (click)="goToCreateQuestion()">Create
+      question</button>
+  </h4>
+  <ul *ngIf="questionList.length > 0">
+    <li *ngFor="let question of questionList; let i= index"
+      style="list-style-type: none">
       <span>{{ i + 1 }}. </span><span>{{ question.title }} </span>
       <button style="margin-left: 10px" (click)="editQuestion(question)">Edit</button>
       <ul *ngIf="question?.choices">
@@ -21,43 +24,61 @@
       <br>
     </li>
   </ul>
-  <p *ngIf="!questionList">There is no question to be displayed.</p>
+  <p *ngIf="questionList.length == 0">There is no question to be displayed.</p>
+  <button style="margin:10px" (click)="backStep()">Back</button>
 </div>
 
 <div style="margin-left: 40px" *ngIf="createStep && !editStep">
   <h3>Create new question</h3>
   <div style="margin: 10px">
-    <label for="question-title">Question Title: </label><input style="width: 300px" type="text" name="question-title" [(ngModel)]="newQuestion.title" type="text" required>
+    <label for="question-title">Question Title: </label><input style="width:
+      300px" type="text" name="question-title" [(ngModel)]="newQuestion.title"
+      type="text" required>
   </div>
   <div>
     <p>MCQ Choices of question:</p>
-    <div *ngFor="let choice of newChoices, let i = index" style="margin: 5px">
-      <label for="choice-content">Choice {{ i+1 }}: </label><input name="choice-content" [(ngModel)]="choice.content" style="width: 240px" type="text" required>
-      <input type="radio" id="true{{i}}" name="correct-choice{{i}}" value="{{true}}" [(ngModel)]="choice.isValid" [checked]="!choice.isValid"><label for="true{{i}}">True</label>
-      <input type="radio" id="false{{i}}" name="correct-choice{{i}}" value="{{false}}" [(ngModel)]="choice.isValid" [checked]="!choice.isValid"><label for="false{{i}}">False</label>
+    <div *ngFor="let choice of newChoices, let i= index" style="margin: 5px">
+      <label for="choice-content">Choice {{ i+1 }}: </label><input
+        name="choice-content" [(ngModel)]="choice.content" style="width: 240px"
+        type="text" required>
+      <input type="radio" id="true{{i}}" name="correct-choice{{i}}"
+        value="{{true}}" [(ngModel)]="choice.isValid"
+        [checked]="!choice.isValid"><label for="true{{i}}">True</label>
+      <input type="radio" id="false{{i}}" name="correct-choice{{i}}"
+        value="{{false}}" [(ngModel)]="choice.isValid"
+        [checked]="!choice.isValid"><label for="false{{i}}">False</label>
     </div>
   </div>
   <div style="padding: 20px">
     <button style="margin:10px" (click)="backStep()">Back</button>
-    <button (click)="createQuestion(newQuestion)" [disabled]="!newQuestion.title">Create</button>
+    <button (click)="createQuestion(newQuestion)"
+      [disabled]="!newQuestion.title">Create</button>
   </div>
 </div>
 
 <div style="margin-left: 40px" *ngIf="!createStep && editStep">
-    <h3>Edit question: </h3>
-    <div style="margin: 10px">
-      <label for="question-title">Question Title: </label><input style="width: 300px" type="text" name="question-title" [(ngModel)]="editingQuestion.title" type="text" required>
-    </div>
-    <div>
-      <p>MCQ Choices of question:</p>
-      <div *ngFor="let choice of editingQuestion.choices, let i = index" style="margin: 5px">
-        <label for="choice-content">Choice {{ i+1 }}: </label><input name="choice-content" [(ngModel)]="choice.content" style="width: 240px" type="text" required>
-        <input type="radio" id="true{{i}}" name="correct-choice{{i}}" [value]="true" [(ngModel)]="choice.isValid"><label for="true{{i}}">True</label>
-        <input type="radio" id="false{{i}}" name="correct-choice{{i}}" [value]="false" [(ngModel)]="choice.isValid"><label for="false{{i}}">False</label>
-      </div>
-    </div>
-    <div style="padding: 20px">
-      <button style="margin:10px" (click)="backStep()">Back</button>
-      <button (click)="updateQuestion(editingQuestion)" [disabled]="!editingQuestion.title">Save</button>
+  <h3>Edit question: </h3>
+  <div style="margin: 10px">
+    <label for="question-title">Question Title: </label><input style="width:
+      300px" type="text" name="question-title"
+      [(ngModel)]="editingQuestion.title" type="text" required>
+  </div>
+  <div>
+    <p>MCQ Choices of question:</p>
+    <div *ngFor="let choice of editingQuestion.choices, let i= index"
+      style="margin: 5px">
+      <label for="choice-content">Choice {{ i+1 }}: </label><input
+        name="choice-content" [(ngModel)]="choice.content" style="width: 240px"
+        type="text" required>
+      <input type="radio" id="true{{i}}" name="correct-choice{{i}}"
+        [value]="true" [(ngModel)]="choice.isValid"><label for="true{{i}}">True</label>
+      <input type="radio" id="false{{i}}" name="correct-choice{{i}}"
+        [value]="false" [(ngModel)]="choice.isValid"><label for="false{{i}}">False</label>
     </div>
   </div>
+  <div style="padding: 20px">
+    <button style="margin:10px" (click)="backStep()">Back</button>
+    <button (click)="updateQuestion(editingQuestion)"
+      [disabled]="!editingQuestion.title">Save</button>
+  </div>
+</div>
